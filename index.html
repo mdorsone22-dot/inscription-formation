@@ -3,1352 +3,725 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inscription — Expertise en Lettrage & Impression</title>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>emailjs.init('kMKh2aanXxHg6Ollc');</script>
+<title>Formation Lettrage & Impression — Inscription 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --gold: #C9972B;
-    --gold-light: #E8B84B;
-    --gold-pale: rgba(201,151,43,0.12);
-    --dark: #0A0A0F;
-    --dark-2: #111118;
-    --dark-3: #1A1A24;
-    --dark-4: #22222F;
-    --border: rgba(201,151,43,0.25);
-    --text: #E8E4DC;
-    --text-muted: rgba(232,228,220,0.55);
-    --red: #E05252;
-    --green: #4CAF7D;
-    --radius: 10px;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--dark);
-    color: var(--text);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  /* ─── HERO ─────────────────────────────────────────────── */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 60px 24px 80px;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,151,43,0.18) 0%, transparent 65%),
-      radial-gradient(ellipse 50% 40% at 20% 80%, rgba(201,151,43,0.08) 0%, transparent 60%),
-      linear-gradient(180deg, #0A0A0F 0%, #0D0D16 100%);
-    z-index: 0;
-  }
-
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(201,151,43,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,151,43,0.06) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 0%, transparent 80%);
-    z-index: 0;
-  }
-
-  .hero > * { position: relative; z-index: 1; }
-
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid var(--border);
-    background: var(--gold-pale);
-    color: var(--gold-light);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    padding: 8px 18px;
-    border-radius: 100px;
-    margin-bottom: 32px;
-    animation: fadeUp 0.7s ease both;
-  }
-
-  .badge::before {
-    content: '';
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--gold);
-    box-shadow: 0 0 8px var(--gold);
-    animation: pulse 2s ease infinite;
-  }
-
-  @keyframes pulse {
-    0%,100% { opacity:1; transform:scale(1); }
-    50% { opacity:.5; transform:scale(1.3); }
-  }
-
-  .hero-eyebrow {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-    animation: fadeUp 0.7s 0.1s ease both;
-  }
-
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.2rem, 8vw, 7rem);
-    font-weight: 700;
-    line-height: 1.0;
-    letter-spacing: -0.01em;
-    margin-bottom: 24px;
-    animation: fadeUp 0.7s 0.2s ease both;
-  }
-
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold-light);
-  }
-
-  .hero-subtitle {
-    font-size: 16px;
-    font-weight: 300;
-    color: var(--text-muted);
-    max-width: 520px;
-    line-height: 1.7;
-    margin-bottom: 40px;
-    animation: fadeUp 0.7s 0.3s ease both;
-  }
-
-  .hero-dates {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 32px;
-    animation: fadeUp 0.7s 0.4s ease both;
-  }
-
-  .date-chip {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: var(--dark-3);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px 28px;
-    min-width: 130px;
-  }
-
-  .date-chip .day {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.4rem;
-    line-height: 1;
-    color: var(--gold-light);
-    letter-spacing: 0.05em;
-  }
-
-  .date-chip .label {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-top: 4px;
-  }
-
-  .urgency-bar {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: rgba(224,82,82,0.12);
-    border: 1px solid rgba(224,82,82,0.35);
-    border-radius: 100px;
-    padding: 10px 22px;
-    color: #F98080;
-    font-size: 13px;
-    font-weight: 500;
-    animation: fadeUp 0.7s 0.5s ease both;
-  }
-
-  .urgency-bar::before {
-    content: '⚠';
-    font-size: 14px;
-  }
-
-  .scroll-cta {
-    margin-top: 56px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-muted);
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    animation: fadeUp 0.7s 0.7s ease both;
-    text-decoration: none;
-  }
-
-  .scroll-cta svg {
-    animation: bounce 2s ease infinite;
-  }
-
-  @keyframes bounce {
-    0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)}
-  }
-
-  /* ─── FORM SECTION ──────────────────────────────────────── */
-  .form-section {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 60px 24px 100px;
-  }
-
-  /* Steps nav */
-  .steps-nav {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    margin-bottom: 56px;
-    overflow-x: auto;
-    padding-bottom: 4px;
-  }
-
-  .steps-nav::-webkit-scrollbar { display: none; }
-
-  .step-dot {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    flex: 1;
-    min-width: 60px;
-    position: relative;
-  }
-
-  .step-dot:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 17px;
-    left: calc(50% + 17px);
-    width: calc(100% - 34px);
-    height: 1px;
-    background: var(--dark-4);
-    transition: background 0.4s;
-  }
-
-  .step-dot.done:not(:last-child)::after,
-  .step-dot.active:not(:last-child)::after {
-    background: var(--gold);
-  }
-
-  .dot-circle {
-    width: 34px; height: 34px;
-    border-radius: 50%;
-    border: 2px solid var(--dark-4);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-muted);
-    background: var(--dark-2);
-    transition: all 0.3s;
-    position: relative;
-    z-index: 1;
-  }
-
-  .step-dot.active .dot-circle {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: var(--gold-pale);
-    box-shadow: 0 0 20px rgba(201,151,43,0.3);
-  }
-
-  .step-dot.done .dot-circle {
-    border-color: var(--gold);
-    background: var(--gold);
-    color: var(--dark);
-  }
-
-  .dot-label {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
-    white-space: nowrap;
-    transition: color 0.3s;
-    text-align: center;
-  }
-
-  .step-dot.active .dot-label { color: var(--gold); }
-  .step-dot.done .dot-label { color: var(--text); }
-
-  /* Form steps */
-  .form-step {
-    display: none;
-    animation: fadeUp 0.4s ease both;
-  }
-
-  .form-step.active { display: block; }
-
-  .step-header {
-    margin-bottom: 36px;
-  }
-
-  .step-number {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-
-  .step-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.4rem;
-    font-weight: 600;
-    line-height: 1.15;
-  }
-
-  .step-desc {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-top: 8px;
-    line-height: 1.6;
-  }
-
-  /* Form fields */
-  .field-group { margin-bottom: 24px; }
-
-  .field-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  @media (max-width: 560px) {
-    .field-row { grid-template-columns: 1fr; }
-  }
-
-  label {
-    display: block;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-  }
-
-  label span.req { color: var(--gold); margin-left: 3px; }
-
-  input[type=text],
-  input[type=email],
-  input[type=tel],
-  select {
-    width: 100%;
-    background: var(--dark-3);
-    border: 1.5px solid var(--dark-4);
-    border-radius: var(--radius);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    padding: 14px 18px;
-    outline: none;
-    transition: border-color 0.25s, box-shadow 0.25s;
-    -webkit-appearance: none;
-  }
-
-  input:focus, select:focus {
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(201,151,43,0.12);
-  }
-
-  select {
-    cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23C9972B' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    padding-right: 44px;
-  }
-
-  select option { background: #1A1A24; }
-
-  /* Info card */
-  .info-card {
-    background: var(--dark-3);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px 24px;
-    margin-bottom: 20px;
-  }
-
-  .info-card-title {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .info-card p {
-    font-size: 14px;
-    color: var(--text-muted);
-    line-height: 1.65;
-  }
-
-  .info-card p + p { margin-top: 8px; }
-
-  .highlight { color: var(--text); font-weight: 500; }
-
-  /* Alert */
-  .alert {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    padding: 14px 18px;
-    border-radius: var(--radius);
-    margin-bottom: 20px;
-    font-size: 13.5px;
-    line-height: 1.55;
-  }
-
-  .alert-warning {
-    background: rgba(224,82,82,0.1);
-    border: 1px solid rgba(224,82,82,0.3);
-    color: #F4A0A0;
-  }
-
-  .alert-info {
-    background: rgba(201,151,43,0.1);
-    border: 1px solid rgba(201,151,43,0.25);
-    color: #E0C070;
-  }
-
-  .alert-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
-
-  /* Payment cards */
-  .payment-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  @media (max-width: 500px) {
-    .payment-grid { grid-template-columns: 1fr; }
-  }
-
-  .payment-card {
-    background: var(--dark-3);
-    border: 2px solid var(--dark-4);
-    border-radius: var(--radius);
-    padding: 24px 20px;
-    cursor: pointer;
-    transition: border-color 0.25s, background 0.25s, transform 0.2s;
-    position: relative;
-  }
-
-  .payment-card:hover {
-    border-color: rgba(201,151,43,0.45);
-    transform: translateY(-2px);
-  }
-
-  .payment-card.selected {
-    border-color: var(--gold);
-    background: var(--gold-pale);
-  }
-
-  .payment-card input[type=radio] {
-    position: absolute;
-    opacity: 0;
-    width: 0; height: 0;
-  }
-
-  .payment-tag {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 10px;
-  }
-
-  .payment-amount {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--gold-light);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-
-  .payment-note {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  .payment-card.selected .payment-tag { color: var(--gold); }
-
-  .payment-badge {
-    position: absolute;
-    top: -1px; right: 12px;
-    background: var(--gold);
-    color: var(--dark);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 0 0 8px 8px;
-  }
-
-  /* Cert options */
-  .cert-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 28px;
-  }
-
-  @media (max-width: 500px) { .cert-grid { grid-template-columns: 1fr; } }
-
-  .cert-card {
-    background: var(--dark-3);
-    border: 2px solid var(--dark-4);
-    border-radius: var(--radius);
-    padding: 22px 18px;
-    cursor: pointer;
-    transition: all 0.25s;
-    text-align: center;
-    position: relative;
-  }
-
-  .cert-card input[type=radio] {
-    position: absolute; opacity:0; width:0; height:0;
-  }
-
-  .cert-card:hover { border-color: rgba(201,151,43,0.4); }
-  .cert-card.selected { border-color: var(--gold); background: var(--gold-pale); }
-
-  .cert-icon { font-size: 2rem; margin-bottom: 10px; }
-  .cert-label { font-weight: 600; font-size: 14px; }
-  .cert-sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
-
-  /* Checkboxes */
-  .consent-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
-
-  .consent-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 16px 18px;
-    background: var(--dark-3);
-    border: 1.5px solid var(--dark-4);
-    border-radius: var(--radius);
-    cursor: pointer;
-    transition: border-color 0.2s;
-  }
-
-  .consent-item:hover { border-color: var(--border); }
-  .consent-item.checked { border-color: var(--gold); }
-
-  .consent-item input[type=checkbox] {
-    position: absolute; opacity:0; width:0; height:0;
-  }
-
-  .check-box {
-    width: 22px; height: 22px;
-    border: 2px solid var(--dark-4);
-    border-radius: 5px;
-    background: var(--dark-2);
-    flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.2s;
-    margin-top: 1px;
-  }
-
-  .consent-item.checked .check-box {
-    background: var(--gold);
-    border-color: var(--gold);
-  }
-
-  .check-box svg { display: none; }
-  .consent-item.checked .check-box svg { display: block; }
-
-  .consent-text { font-size: 13.5px; line-height: 1.6; color: var(--text-muted); }
-  .consent-item.checked .consent-text { color: var(--text); }
-  .consent-num { font-weight: 700; color: var(--gold); margin-right: 4px; font-size: 12px; }
-
-  /* Schedule */
-  .schedule-block { margin-bottom: 24px; }
-
-  .schedule-day {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .time-options {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .time-chip {
-    padding: 9px 18px;
-    border: 1.5px solid var(--dark-4);
-    border-radius: 100px;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-    color: var(--text-muted);
-    background: var(--dark-3);
-    user-select: none;
-  }
-
-  .time-chip:hover { border-color: var(--border); color: var(--text); }
-  .time-chip.selected {
-    border-color: var(--gold);
-    background: var(--gold-pale);
-    color: var(--gold-light);
-  }
-
-  /* Buttons */
-  .btn-row {
-    display: flex;
-    gap: 12px;
-    margin-top: 36px;
-  }
-
-  .btn-back {
-    flex-shrink: 0;
-    padding: 15px 24px;
-    background: transparent;
-    border: 1.5px solid var(--dark-4);
-    border-radius: var(--radius);
-    color: var(--text-muted);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .btn-back:hover { border-color: var(--text-muted); color: var(--text); }
-
-  .btn-next {
-    flex: 1;
-    padding: 16px 32px;
-    background: linear-gradient(135deg, var(--gold) 0%, #A8791C 100%);
-    border: none;
-    border-radius: var(--radius);
-    color: #0A0A0F;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    transition: all 0.25s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn-next::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, #E8C06A 0%, var(--gold) 100%);
-    opacity: 0;
-    transition: opacity 0.25s;
-  }
-
-  .btn-next:hover::before { opacity: 1; }
-  .btn-next:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201,151,43,0.35); }
-  .btn-next span { position: relative; z-index: 1; }
-
-  /* Progress bar */
-  .progress-bar-wrap {
-    height: 2px;
-    background: var(--dark-4);
-    border-radius: 100px;
-    margin-bottom: 40px;
-    overflow: hidden;
-  }
-
-  .progress-bar-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--gold), var(--gold-light));
-    border-radius: 100px;
-    transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
-  }
-
-  /* Divider */
-  .divider {
-    border: none;
-    border-top: 1px solid var(--dark-4);
-    margin: 28px 0;
-  }
-
-  /* Success */
-  .success-screen {
-    display: none;
-    text-align: center;
-    padding: 60px 24px 100px;
-    max-width: 600px;
-    margin: 0 auto;
-    animation: fadeUp 0.6s ease both;
-  }
-
-  .success-screen.active { display: block; }
-
-  .success-icon {
-    width: 90px; height: 90px;
-    background: rgba(76,175,125,0.15);
-    border: 2px solid var(--green);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 2.5rem;
-    margin: 0 auto 32px;
-    animation: popIn 0.5s 0.2s cubic-bezier(0.34,1.56,0.64,1) both;
-  }
-
-  @keyframes popIn {
-    from { transform: scale(0); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-  }
-
-  .success-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-    line-height: 1.1;
-  }
-
-  .success-msg {
-    font-size: 15px;
-    color: var(--text-muted);
-    line-height: 1.75;
-    max-width: 480px;
-    margin: 0 auto 36px;
-  }
-
-  .success-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    text-align: left;
-    background: var(--dark-3);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 24px;
-  }
-
-  .s-step {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    font-size: 14px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  .s-step-num {
-    width: 24px; height: 24px;
-    background: var(--gold-pale);
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--gold);
-    flex-shrink: 0;
-  }
-
-  /* ─── UTILS ─────────────────────────────────────────────── */
-  @keyframes fadeUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-
-  .error-msg {
-    font-size: 12px;
-    color: #F98080;
-    margin-top: 6px;
-    display: none;
-  }
-
-  .error-msg.visible { display: block; }
-
-  input.invalid, select.invalid {
-    border-color: rgba(224,82,82,0.7);
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 24px;
-    font-size: 12px;
-    color: var(--text-muted);
-    border-top: 1px solid var(--dark-4);
-  }
-
-  footer span { color: var(--gold); }
-
-  @media (max-width: 480px) {
-    .steps-nav { gap: 0; }
-    .dot-label { font-size: 9px; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Outfit:wght@200;300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>emailjs.init('kMKh2aanXxHg6Ollc');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0C0B08;
+  --bg2:#141210;
+  --bg3:#1C1A16;
+  --bg4:#242018;
+  --cream:#F5EFE2;
+  --cream2:rgba(245,239,226,0.55);
+  --cream3:rgba(245,239,226,0.18);
+  --cream4:rgba(245,239,226,0.07);
+  --gold:#C8952A;
+  --gold2:#E0AA40;
+  --gold3:#F0C060;
+  --gold4:rgba(200,149,42,0.15);
+  --gold-b:rgba(200,149,42,0.28);
+  --red:#C04040;
+  --red-bg:rgba(192,64,64,0.1);
+  --red-b:rgba(192,64,64,0.28);
+  --green:#3A8A58;
+  --border:rgba(245,239,226,0.08);
+  --r:6px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--cream);overflow-x:hidden}
+
+/* ══════════════ HERO ══════════════ */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;flex-direction:column;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 90% 70% at 60% -10%, rgba(200,149,42,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 90%, rgba(200,149,42,0.06) 0%, transparent 55%),
+    linear-gradient(170deg, #0E0C09 0%, #0C0B08 100%);
+}
+.hero-lines{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(245,239,226,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,239,226,0.025) 1px, transparent 1px);
+  background-size:80px 80px;
+  mask-image:radial-gradient(ellipse 80% 80% at 70% 20%, black 0%, transparent 70%);
+}
+.hero-accent{
+  position:absolute;right:0;top:0;bottom:0;width:45%;
+  border-left:1px solid var(--border);
+  background:linear-gradient(180deg, rgba(200,149,42,0.04) 0%, transparent 60%);
+  pointer-events:none;
+}
+.hero-accent::before{
+  content:'';position:absolute;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  width:400px;height:400px;border-radius:50%;
+  border:1px solid rgba(200,149,42,0.06);
+}
+.hero > *{position:relative;z-index:1;}
+
+.hero-top{
+  flex:1;display:flex;align-items:center;
+  padding:120px 72px 60px;max-width:1140px;width:100%;margin:0 auto;
+}
+@media(max-width:800px){.hero-top{padding:100px 28px 48px;flex-direction:column;align-items:flex-start;}}
+
+.hero-left{flex:1;}
+
+.htag{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'Outfit',sans-serif;font-weight:300;font-size:11px;
+  letter-spacing:0.3em;text-transform:uppercase;color:var(--gold2);
+  margin-bottom:32px;
+}
+.htag::before{content:'';width:32px;height:1px;background:var(--gold2);opacity:0.5;}
+
+.hero-h1{
+  font-family:'Cormorant',serif;
+  font-size:clamp(4.5rem,9vw,10rem);
+  font-weight:300;line-height:0.9;
+  color:var(--cream);letter-spacing:-0.02em;
+  margin-bottom:4px;
+}
+.hero-h1 span{
+  font-style:italic;
+  background:linear-gradient(135deg, var(--gold2) 0%, var(--gold3) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+.hero-h2{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2rem,4vw,4.5rem);
+  font-style:italic;font-weight:400;
+  color:rgba(245,239,226,0.35);
+  line-height:1;letter-spacing:0.02em;
+  margin-bottom:48px;
+}
+
+.hero-right{
+  width:320px;flex-shrink:0;margin-left:80px;
+  display:flex;flex-direction:column;gap:0;
+}
+@media(max-width:800px){.hero-right{width:100%;margin-left:0;margin-top:32px;}}
+
+.hinfo-row{
+  padding:18px 0;border-bottom:1px solid var(--border);
+  display:flex;flex-direction:column;gap:4px;
+}
+.hinfo-row:first-child{border-top:1px solid var(--border);}
+.hinfo-label{font-size:9px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold2);opacity:0.7;}
+.hinfo-val{font-size:15px;font-weight:300;color:var(--cream);}
+.hinfo-val strong{font-weight:500;}
+
+.urgency{
+  margin-top:20px;display:flex;align-items:center;gap:10px;
+  padding:12px 16px;background:var(--red-bg);border:1px solid var(--red-b);
+  border-radius:var(--r);font-size:12px;font-weight:400;color:#E09090;
+  letter-spacing:0.04em;
+}
+.urgency-dot{width:6px;height:6px;border-radius:50%;background:#E08080;flex-shrink:0;animation:blink 1.6s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+.hero-bottom{
+  padding:0 72px 56px;max-width:1140px;width:100%;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+@media(max-width:800px){.hero-bottom{padding:0 28px 48px;}}
+
+.dates-row{display:flex;gap:10px;}
+.dcard{
+  text-align:center;padding:12px 24px;
+  border:1px solid var(--gold-b);border-radius:var(--r);
+  background:var(--gold4);
+}
+.dcard-n{font-family:'Cormorant',serif;font-size:3rem;font-weight:300;color:var(--gold3);line-height:1;}
+.dcard-l{font-size:9px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--cream3);margin-top:2px;}
+
+.cta-btn{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:16px 40px;
+  background:linear-gradient(135deg, var(--gold) 0%, #A07020 100%);
+  color:#0C0B08;font-family:'Outfit',sans-serif;font-size:11px;
+  font-weight:600;letter-spacing:0.22em;text-transform:uppercase;
+  text-decoration:none;border-radius:var(--r);
+  transition:all 0.3s;
+}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(200,149,42,0.3);filter:brightness(1.08);}
+.cta-btn svg{transition:transform .3s;}
+.cta-btn:hover svg{transform:translateX(4px);}
+
+/* ══════════════ FORM ══════════════ */
+.form-wrap{max-width:660px;margin:0 auto;padding:88px 28px 120px;}
+
+.prog-bar{height:1px;background:var(--bg4);margin-bottom:56px;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold3));transition:width .5s cubic-bezier(.4,0,.2,1);}
+
+.step-nav{display:flex;margin-bottom:52px;overflow-x:auto;}
+.step-nav::-webkit-scrollbar{display:none}
+.sn{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;min-width:44px;position:relative;}
+.sn:not(:last-child)::after{content:'';position:absolute;top:11px;left:calc(50% + 11px);width:calc(100% - 22px);height:1px;background:var(--bg4);transition:background .4s;}
+.sn.done:not(:last-child)::after,.sn.active:not(:last-child)::after{background:var(--gold);}
+.sn-c{width:22px;height:22px;border-radius:50%;border:1px solid var(--bg4);background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:400;color:var(--cream3);position:relative;z-index:1;transition:all .3s;}
+.sn.active .sn-c{border-color:var(--gold);color:var(--gold2);box-shadow:0 0 0 3px rgba(200,149,42,0.12);}
+.sn.done .sn-c{background:var(--gold);border-color:var(--gold);color:var(--bg);font-size:0;}
+.sn.done .sn-c::after{content:'✓';font-size:11px;}
+.sn-l{font-size:9px;font-weight:400;letter-spacing:0.07em;text-transform:uppercase;color:var(--cream3);text-align:center;white-space:nowrap;transition:color .3s;}
+.sn.active .sn-l{color:var(--gold2);}
+.sn.done .sn-l{color:var(--cream2);}
+
+.fstep{display:none;animation:fadeUp .4s ease both;}
+.fstep.active{display:block;}
+@keyframes fadeUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+.step-eye{font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold2);margin-bottom:14px;opacity:.7;}
+.step-title{
+  font-family:'Cormorant',serif;
+  font-size:clamp(2.6rem,5vw,4.2rem);
+  font-weight:300;line-height:1;letter-spacing:-0.01em;
+  color:var(--cream);margin-bottom:10px;
+}
+.step-title em{font-style:italic;color:var(--gold2);}
+.step-desc{font-size:14px;font-weight:300;color:var(--cream3);line-height:1.75;margin-bottom:36px;max-width:500px;}
+
+/* Fields */
+.fld{margin-bottom:20px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:500px){.frow{grid-template-columns:1fr}}
+label{display:block;font-size:9px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--cream3);margin-bottom:7px;}
+label .req{color:var(--gold2);}
+input[type=text],input[type=email],input[type=tel]{
+  width:100%;background:var(--bg2);border:1px solid var(--bg4);border-radius:var(--r);
+  color:var(--cream);font-family:'Outfit',sans-serif;font-size:15px;font-weight:300;
+  padding:13px 16px;outline:none;
+  transition:border-color .25s,box-shadow .25s;-webkit-appearance:none;
+}
+input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,149,42,0.1);}
+input.bad{border-color:rgba(192,64,64,0.6);}
+input::placeholder{color:var(--cream3);opacity:0.6;}
+
+.err{display:none;font-size:11px;color:#E09090;margin-top:5px;}
+.err.on{display:block;}
+
+.note-box{
+  display:flex;gap:12px;padding:14px 18px;border-radius:var(--r);
+  margin-bottom:18px;font-size:13.5px;font-weight:300;line-height:1.65;
+}
+.note-gold{background:rgba(200,149,42,0.08);border:1px solid var(--gold-b);color:rgba(224,170,64,0.85);}
+.note-red{background:var(--red-bg);border:1px solid var(--red-b);color:rgba(224,140,140,0.9);}
+.note-box strong{font-weight:500;color:inherit;}
+
+/* Info block */
+.icard{
+  padding:20px 22px;margin-bottom:16px;
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);
+}
+.icard-top{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:10px;opacity:.8;}
+.icard p{font-size:13.5px;font-weight:300;color:var(--cream2);line-height:1.7;}
+.icard p+p{margin-top:6px;}
+.icard strong{font-weight:500;color:var(--cream);}
+
+hr.div{border:none;border-top:1px solid var(--border);margin:28px 0;}
+
+/* Schedule chips */
+.day-h{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--gold-b);opacity:.8;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
+.chip{
+  padding:8px 16px;border:1px solid var(--bg4);border-radius:100px;
+  font-size:12px;font-weight:400;color:var(--cream3);background:var(--bg2);
+  cursor:pointer;transition:all .2s;user-select:none;
+}
+.chip:hover{border-color:var(--gold-b);color:var(--cream2);}
+.chip.sel{border-color:var(--gold);background:rgba(200,149,42,0.12);color:var(--gold2);}
+
+/* Cert */
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+@media(max-width:460px){.cert-grid{grid-template-columns:1fr}}
+.ccard{padding:22px 18px;border:1.5px solid var(--bg4);border-radius:var(--r);cursor:pointer;transition:all .25s;text-align:center;background:var(--bg2);position:relative;}
+.ccard input[type=radio]{position:absolute;opacity:0;width:0;height:0;}
+.ccard:hover{border-color:var(--gold-b);}
+.ccard.sel{border-color:var(--gold);background:rgba(200,149,42,0.1);}
+.ccard-ico{font-size:1.8rem;margin-bottom:10px;}
+.ccard-name{font-size:14px;font-weight:400;color:var(--cream);}
+.ccard-sub{font-size:11px;font-weight:300;color:var(--cream3);margin-top:4px;}
+
+/* Consent */
+.con-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+.con-row{
+  display:flex;align-items:flex-start;gap:14px;padding:16px 18px;
+  border:1px solid var(--bg4);border-radius:var(--r);cursor:pointer;
+  transition:all .2s;background:var(--bg2);
+}
+.con-row:hover{border-color:var(--gold-b);}
+.con-row.chk{border-color:var(--gold);background:rgba(200,149,42,0.08);}
+.con-row input[type=checkbox]{position:absolute;opacity:0;width:0;height:0;}
+.chkbox{
+  width:20px;height:20px;border-radius:3px;border:1px solid var(--bg4);
+  background:var(--bg);flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  margin-top:2px;transition:all .2s;
+}
+.con-row.chk .chkbox{background:var(--gold);border-color:var(--gold);}
+.chkbox svg{display:none;}
+.con-row.chk .chkbox svg{display:block;}
+.con-txt{font-size:13px;font-weight:300;line-height:1.65;color:var(--cream3);}
+.con-row.chk .con-txt{color:var(--cream2);}
+.con-num{font-size:9px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold2);margin-right:6px;display:block;margin-bottom:2px;}
+
+/* Payment */
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+@media(max-width:460px){.pay-grid{grid-template-columns:1fr}}
+.pcard{position:relative;padding:24px 20px;border:1.5px solid var(--bg4);border-radius:var(--r);cursor:pointer;transition:all .25s;background:var(--bg2);}
+.pcard:hover{border-color:var(--gold-b);}
+.pcard.sel{border-color:var(--gold);background:rgba(200,149,42,0.1);}
+.pcard input[type=radio]{position:absolute;opacity:0;width:0;height:0;}
+.ptag{font-size:9px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--cream3);margin-bottom:10px;}
+.pamt{font-family:'Cormorant',serif;font-size:3rem;font-weight:300;color:var(--gold2);line-height:1;margin-bottom:8px;}
+.pnote{font-size:12px;font-weight:300;color:var(--cream3);line-height:1.6;}
+.pred{color:#E09090;font-weight:400;}
+.pbadge{position:absolute;top:0;right:12px;background:var(--gold);color:var(--bg);font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:3px 10px;border-radius:0 0 4px 4px;}
+.pcard.sel .ptag{color:var(--gold2);}
+
+.pp-section{
+  display:none;margin-top:20px;padding:24px;
+  border:1px solid var(--gold-b);background:rgba(200,149,42,0.06);
+  border-radius:var(--r);text-align:center;
+}
+.pp-label{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:18px;opacity:.8;}
+
+/* Buttons */
+.btn-row{display:flex;gap:12px;margin-top:36px;}
+.btn-back{
+  flex-shrink:0;padding:14px 22px;background:transparent;
+  border:1px solid var(--bg4);border-radius:var(--r);
+  color:var(--cream3);font-family:'Outfit',sans-serif;font-size:12px;font-weight:400;
+  letter-spacing:0.08em;cursor:pointer;transition:all .2s;
+}
+.btn-back:hover{border-color:var(--cream3);color:var(--cream2);}
+.btn-next{
+  flex:1;padding:15px 28px;background:var(--cream);border:none;border-radius:var(--r);
+  color:var(--bg);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all .25s;
+}
+.btn-next:hover{background:#fff;transform:translateY(-1px);box-shadow:0 10px 28px rgba(0,0,0,0.35);}
+
+/* Success */
+.suc-screen{display:none;max-width:580px;margin:0 auto;padding:100px 28px 120px;text-align:center;animation:fadeUp .6s ease both;}
+.suc-screen.on{display:block;}
+.suc-ico{
+  width:80px;height:80px;border-radius:50%;border:1px solid rgba(58,138,88,0.4);
+  background:rgba(58,138,88,0.1);display:flex;align-items:center;justify-content:center;
+  font-size:2rem;margin:0 auto 32px;
+  animation:popIn .5s .2s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.suc-title{font-family:'Cormorant',serif;font-size:clamp(3rem,6vw,5rem);font-weight:300;line-height:1;color:var(--cream);margin-bottom:16px;}
+.suc-title em{font-style:italic;color:var(--gold2);}
+.suc-msg{font-size:15px;font-weight:300;color:var(--cream3);line-height:1.75;max-width:440px;margin:0 auto 40px;}
+.suc-steps{display:flex;flex-direction:column;gap:12px;text-align:left;border:1px solid var(--border);border-radius:var(--r);padding:24px;background:var(--bg2);}
+.suc-row{display:flex;gap:14px;font-size:13px;font-weight:300;color:var(--cream3);line-height:1.6;}
+.suc-n{width:22px;height:22px;border-radius:50%;background:rgba(200,149,42,0.1);border:1px solid var(--gold-b);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:var(--gold2);flex-shrink:0;}
+.suc-row strong{font-weight:500;color:var(--cream2);}
+
+footer{text-align:center;padding:28px;font-size:10px;font-weight:400;letter-spacing:0.12em;color:var(--cream3);border-top:1px solid var(--border);}
+footer span{color:var(--gold2);}
+</style>
 </head>
 <body>
 
-<!-- ── HERO ─────────────────────────────────────── -->
+<!-- ══ HERO ══════════════════════════ -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-accent"></div>
 
-  <div class="badge">Formation Professionnelle · 2026</div>
-  <p class="hero-eyebrow">Montréal · 8552 Boulevard Pie-IX</p>
-
-  <h1 class="hero-title">
-    Expertise en<br>
-    <em>Lettrage &</em><br>
-    Impression
-  </h1>
-
-  <p class="hero-subtitle">
-    Formation intensive de 2 jours — 6 heures de pratique intensive pour maîtriser le <strong>design</strong>, la <strong>découpe</strong> et l'<strong>application de vinyle</strong>.
-  </p>
-
-  <div class="hero-dates">
-    <div class="date-chip">
-      <span class="day">19</span>
-      <span class="label">Vendredi · Juin 2026</span>
+  <div class="hero-top">
+    <div class="hero-left">
+      <div class="htag">Formation professionnelle · Montréal</div>
+      <h1 class="hero-h1">Lettrage &<br><span>Impression</span></h1>
+      <p class="hero-h2">sur Vinyle</p>
     </div>
-    <div class="date-chip">
-      <span class="day">20</span>
-      <span class="label">Samedi · Juin 2026</span>
+    <div class="hero-right">
+      <div class="hinfo-row">
+        <span class="hinfo-label">Durée</span>
+        <span class="hinfo-val"><strong>2 jours</strong> — 6 heures de pratique</span>
+      </div>
+      <div class="hinfo-row">
+        <span class="hinfo-label">Compétences</span>
+        <span class="hinfo-val">Design · Découpe · Application</span>
+      </div>
+      <div class="hinfo-row">
+        <span class="hinfo-label">Matériel</span>
+        <span class="hinfo-val">Fourni gratuitement sur place</span>
+      </div>
+      <div class="hinfo-row">
+        <span class="hinfo-label">Lieu</span>
+        <span class="hinfo-val">8552 Boul. Pie-IX, Montréal</span>
+      </div>
+      <div class="urgency">
+        <div class="urgency-dot"></div>
+        Inscriptions closes le <strong>&nbsp;05 juin 2026</strong>
+      </div>
     </div>
   </div>
 
-  <div class="urgency-bar">
-    Les inscriptions ferment définitivement le <strong>&nbsp;05 juin 2026</strong>
+  <div class="hero-bottom">
+    <div class="dates-row">
+      <div class="dcard"><div class="dcard-n">19</div><div class="dcard-l">Vendredi · Juin 2026</div></div>
+      <div class="dcard"><div class="dcard-n">20</div><div class="dcard-l">Samedi · Juin 2026</div></div>
+    </div>
+    <a class="cta-btn" href="#form">
+      S'inscrire maintenant
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
-
-  <a class="scroll-cta" href="#form">
-    <span>S'inscrire maintenant</span>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="m6 9 6 6 6-6"/>
-    </svg>
-  </a>
 </section>
 
-<!-- ── FORM SECTION ───────────────────────────────── -->
-<div class="form-section" id="form">
+<!-- ══ FORM ═══════════════════════════ -->
+<div id="form">
+<div class="form-wrap">
+  <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:16.6%"></div></div>
 
-  <!-- Progress bar -->
-  <div class="progress-bar-wrap">
-    <div class="progress-bar-fill" id="progressBar" style="width: 16.6%"></div>
-  </div>
-
-  <!-- Step nav -->
-  <nav class="steps-nav" id="stepsNav">
-    <div class="step-dot active" data-step="1">
-      <div class="dot-circle">1</div>
-      <span class="dot-label">Profil</span>
-    </div>
-    <div class="step-dot" data-step="2">
-      <div class="dot-circle">2</div>
-      <span class="dot-label">Logistique</span>
-    </div>
-    <div class="step-dot" data-step="3">
-      <div class="dot-circle">3</div>
-      <span class="dot-label">Horaires</span>
-    </div>
-    <div class="step-dot" data-step="4">
-      <div class="dot-circle">4</div>
-      <span class="dot-label">Paiement</span>
-    </div>
-    <div class="step-dot" data-step="5">
-      <div class="dot-circle">5</div>
-      <span class="dot-label">Certificat</span>
-    </div>
-    <div class="step-dot" data-step="6">
-      <div class="dot-circle">6</div>
-      <span class="dot-label">Consentements</span>
-    </div>
+  <nav class="step-nav">
+    <div class="sn active"><div class="sn-c">1</div><span class="sn-l">Profil</span></div>
+    <div class="sn"><div class="sn-c">2</div><span class="sn-l">Logistique</span></div>
+    <div class="sn"><div class="sn-c">3</div><span class="sn-l">Horaires</span></div>
+    <div class="sn"><div class="sn-c">4</div><span class="sn-l">Certificat</span></div>
+    <div class="sn"><div class="sn-c">5</div><span class="sn-l">Consentements</span></div>
+    <div class="sn"><div class="sn-c">6</div><span class="sn-l">Paiement</span></div>
   </nav>
 
-  <!-- ─ STEP 1 : Identification ──────────────── -->
-  <div class="form-step active" id="step-1">
-    <div class="step-header">
-      <p class="step-number">Étape 01 / 06</p>
-      <h2 class="step-title">Vos informations<br>personnelles</h2>
-      <p class="step-desc">Ces informations servent à votre suivi WhatsApp et à l'organisation de la formation.</p>
-    </div>
+  <!-- STEP 1 -->
+  <div class="fstep active" id="step-1">
+    <p class="step-eye">Étape 01 / 06</p>
+    <h2 class="step-title">Vos informations<br><em>personnelles</em></h2>
+    <p class="step-desc">Ces données servent à votre suivi WhatsApp et à l'organisation de la formation.</p>
 
-    <div class="field-row">
-      <div class="field-group">
+    <div class="frow">
+      <div class="fld">
         <label>Nom <span class="req">*</span></label>
         <input type="text" id="lastName" placeholder="Votre nom">
-        <p class="error-msg" id="lastNameErr">Ce champ est obligatoire.</p>
+        <p class="err" id="errLN">Ce champ est obligatoire.</p>
       </div>
-      <div class="field-group">
+      <div class="fld">
         <label>Prénom <span class="req">*</span></label>
         <input type="text" id="firstName" placeholder="Votre prénom">
-        <p class="error-msg" id="firstNameErr">Ce champ est obligatoire.</p>
+        <p class="err" id="errFN">Ce champ est obligatoire.</p>
       </div>
     </div>
-
-    <div class="field-group">
+    <div class="fld">
       <label>Adresse e-mail <span class="req">*</span></label>
       <input type="email" id="email" placeholder="votre@email.com">
-      <p class="error-msg" id="emailErr">Veuillez entrer un e-mail valide.</p>
+      <p class="err" id="errEM">Veuillez entrer un e-mail valide.</p>
     </div>
-
-    <div class="alert alert-info">
-      <span class="alert-icon">📧</span>
-      <span>L'horaire définitif vous sera envoyé par e-mail <strong>le 24 mai</strong>. Assurez-vous que votre adresse est correcte.</span>
+    <div class="note-box note-gold">
+      <span>📧</span>
+      <span>L'horaire pré-sélectionné vous sera communiqué par e-mail <strong>le 24 mai</strong>. Vérifiez que votre adresse est correcte.</span>
     </div>
-
-    <div class="field-group">
+    <div class="fld">
       <label>Numéro de téléphone <span class="req">*</span></label>
       <input type="tel" id="phone" placeholder="+1 (514) 000-0000">
-      <p class="error-msg" id="phoneErr">Ce champ est obligatoire.</p>
+      <p class="err" id="errPH">Ce champ est obligatoire.</p>
     </div>
-
-    <div class="alert alert-info">
-      <span class="alert-icon">💬</span>
+    <div class="note-box note-gold">
+      <span>💬</span>
       <span>Votre numéro sera utilisé pour les rappels <strong>WhatsApp</strong> avant et pendant la formation.</span>
     </div>
-
     <div class="btn-row">
-      <button class="btn-next" onclick="nextStep(1)"><span>Continuer →</span></button>
+      <button class="btn-next" onclick="nextStep(1)">Continuer →</button>
     </div>
   </div>
 
-  <!-- ─ STEP 2 : Logistique ──────────────────── -->
-  <div class="form-step" id="step-2">
-    <div class="step-header">
-      <p class="step-number">Étape 02 / 06</p>
-      <h2 class="step-title">Matériel &<br>Tenue de pratique</h2>
-      <p class="step-desc">Tout ce que vous devez savoir avant le jour J.</p>
-    </div>
+  <!-- STEP 2 -->
+  <div class="fstep" id="step-2">
+    <p class="step-eye">Étape 02 / 06</p>
+    <h2 class="step-title">Matériel &<br><em>Tenue</em></h2>
+    <p class="step-desc">Tout ce que vous devez savoir avant le jour J.</p>
 
-    <div class="info-card">
-      <div class="info-card-title">🎁 Matériel fourni gratuitement</div>
-      <p>Tous les matériaux nécessaires à la pratique sont <span class="highlight">fournis gratuitement</span> sur place :</p>
-      <p>vitres · vinyles · outils de découpe et d'application</p>
+    <div class="icard">
+      <p class="icard-top">🎁 Matériel fourni gratuitement</p>
+      <p>Tous les matériaux nécessaires sont <strong>fournis gratuitement</strong> sur place : vitres · vinyles · outils de découpe et d'application.</p>
     </div>
-
-    <div class="info-card">
-      <div class="info-card-title">👕 Tenue de pratique</div>
-      <p>Un <span class="highlight">maillot de pratique</span> est fourni sur place pour les exercices. Il n'y a plus d'uniforme personnalisé à récupérer à l'avance.</p>
-      <p>Portez simplement une tenue confortable qui vous convient.</p>
+    <div class="icard">
+      <p class="icard-top">👕 Tenue de pratique</p>
+      <p>Un <strong>maillot de pratique</strong> est fourni sur place. Aucun uniforme à récupérer à l'avance. Portez simplement une tenue confortable.</p>
     </div>
-
-    <div class="alert alert-warning">
-      <span class="alert-icon">⚠️</span>
-      <div>
-        <strong>Obligatoire — Ordinateur portable ou tablette</strong><br>
-        Vous devez impérativement apporter votre propre ordinateur portable ou tablette pour la partie <strong>design</strong> de la formation. Sans cet appareil, vous ne pourrez pas participer pleinement.
-      </div>
+    <div class="note-box note-red">
+      <span>⚠️</span>
+      <div><strong>Obligatoire — Ordinateur portable ou tablette</strong><br>Vous devez apporter votre propre appareil pour la partie design. Sans lui, participation partielle seulement.</div>
     </div>
-
     <div class="btn-row">
       <button class="btn-back" onclick="prevStep(2)">← Retour</button>
-      <button class="btn-next" onclick="nextStep(2)"><span>Continuer →</span></button>
+      <button class="btn-next" onclick="nextStep(2)">Continuer →</button>
     </div>
   </div>
 
-  <!-- ─ STEP 3 : Disponibilités ──────────────── -->
-  <div class="form-step" id="step-3">
-    <div class="step-header">
-      <p class="step-number">Étape 03 / 06</p>
-      <h2 class="step-title">Vos disponibilités<br>horaires</h2>
-      <p class="step-desc">Indiquez vos préférences. L'horaire pré-sélectionné n'est pas garanti et vous sera communiqué par courriel le <strong>24 mai</strong>.</p>
+  <!-- STEP 3 -->
+  <div class="fstep" id="step-3">
+    <p class="step-eye">Étape 03 / 06</p>
+    <h2 class="step-title">Vos<br><em>disponibilités</em></h2>
+    <p class="step-desc">Indiquez vos préférences. L'horaire pré-sélectionné n'est pas garanti et vous sera communiqué par courriel le <strong>24 mai</strong>.</p>
+
+    <div class="day-h">📅 Vendredi 19 juin — 16h30 à 22h</div>
+    <div class="chips" id="fri">
+      <div class="chip" onclick="this.classList.toggle('sel')">16h30 – 18h30</div>
+      <div class="chip" onclick="this.classList.toggle('sel')">17h00 – 19h00</div>
+      <div class="chip" onclick="this.classList.toggle('sel')">18h00 – 20h00</div>
+      <div class="chip" onclick="this.classList.toggle('sel')">19h00 – 21h00</div>
+      <div class="chip" onclick="this.classList.toggle('sel')">20h00 – 22h00</div>
     </div>
-
-    <div class="alert alert-info">
-      <span class="alert-icon">ℹ️</span>
-      <span>Sélectionnez toutes les plages horaires où vous êtes disponible. Vous pouvez en choisir plusieurs.</span>
+    <hr class="div">
+    <div class="day-h">📅 Samedi 20 juin — 8h à 17h</div>
+    <div class="chips" id="sat">
+      <div class="chip" onclick="this.classList.toggle('sel')">8h00 – 10h00</div>
+      <div class="chip" onclick="this.classList.toggle('sel')">9h00 – 11h00</div>
+      <div class="chip" onclick="this.classList.toggle('sel')">10h00 – 12h00</div>
+      <div class="chip" onclick="this.classList.toggle('sel')">12h00 – 14h00</div>
+      <div class="chip" onclick="this.classList.toggle('sel')">14h00 – 16h00</div>
+      <div class="chip" onclick="this.classList.toggle('sel')">15h00 – 17h00</div>
     </div>
-
-    <div class="schedule-block">
-      <p class="schedule-day">📅 Vendredi 19 juin — Disponibilités entre 16h30 et 22h</p>
-      <div class="time-options" id="friday-times">
-        <div class="time-chip" onclick="toggleChip(this)">16h30 – 18h30</div>
-        <div class="time-chip" onclick="toggleChip(this)">17h00 – 19h00</div>
-        <div class="time-chip" onclick="toggleChip(this)">18h00 – 20h00</div>
-        <div class="time-chip" onclick="toggleChip(this)">19h00 – 21h00</div>
-        <div class="time-chip" onclick="toggleChip(this)">20h00 – 22h00</div>
-      </div>
-    </div>
-
-    <hr class="divider">
-
-    <div class="schedule-block">
-      <p class="schedule-day">📅 Samedi 20 juin — Disponibilités entre 8h et 17h</p>
-      <div class="time-options" id="saturday-times">
-        <div class="time-chip" onclick="toggleChip(this)">8h00 – 10h00</div>
-        <div class="time-chip" onclick="toggleChip(this)">9h00 – 11h00</div>
-        <div class="time-chip" onclick="toggleChip(this)">10h00 – 12h00</div>
-        <div class="time-chip" onclick="toggleChip(this)">12h00 – 14h00</div>
-        <div class="time-chip" onclick="toggleChip(this)">14h00 – 16h00</div>
-        <div class="time-chip" onclick="toggleChip(this)">15h00 – 17h00</div>
-      </div>
-    </div>
-
     <div class="btn-row">
       <button class="btn-back" onclick="prevStep(3)">← Retour</button>
-      <button class="btn-next" onclick="nextStep(3)"><span>Continuer →</span></button>
+      <button class="btn-next" onclick="nextStep(3)">Continuer →</button>
     </div>
   </div>
 
-  <!-- ─ STEP 4 : Paiement ────────────────────── -->
-  <div class="form-step" id="step-4">
-    <div class="step-header">
-      <p class="step-number">Étape 04 / 06</p>
-      <h2 class="step-title">Options de<br>paiement</h2>
-      <p class="step-desc">Prix total de la formation : <strong>360 $ CAD</strong>. Choisissez votre mode de règlement.</p>
-    </div>
+  <!-- STEP 4 -->
+  <div class="fstep" id="step-4">
+    <p class="step-eye">Étape 04 / 06</p>
+    <h2 class="step-title">Votre<br><em>certificat</em></h2>
+    <p class="step-desc">Comment souhaitez-vous recevoir votre certificat de participation ?</p>
 
-    <div class="payment-grid">
-      <div class="payment-card" id="pay1" onclick="selectPayment('pay1')">
-        <input type="radio" name="payment" value="deposit">
-        <p class="payment-tag">Option 1 — Dépôt</p>
-        <p class="payment-amount">108 $</p>
-        <p class="payment-note">30 % du montant total.<br><strong style="color:#F4A0A0">Non remboursable à partir du 25 mai.</strong></p>
+    <div class="cert-grid">
+      <div class="ccard" id="c1" onclick="selCert('c1')">
+        <input type="radio" name="cert" value="digital">
+        <div class="ccard-ico">📧</div>
+        <div class="ccard-name">Format Digital</div>
+        <div class="ccard-sub">Envoyé par e-mail</div>
       </div>
-      <div class="payment-card" id="pay2" onclick="selectPayment('pay2')">
-        <div class="payment-badge">Recommandé</div>
-        <input type="radio" name="payment" value="full">
-        <p class="payment-tag">Option 2 — Complet</p>
-        <p class="payment-amount">360 $</p>
-        <p class="payment-note">Paiement total en une fois.<br>Place garantie immédiatement.</p>
+      <div class="ccard" id="c2" onclick="selCert('c2')">
+        <input type="radio" name="cert" value="physical">
+        <div class="ccard-ico">🏅</div>
+        <div class="ccard-name">Format Physique</div>
+        <div class="ccard-sub">Remis à la fin du programme</div>
       </div>
     </div>
-
-    <p class="error-msg" id="payErr" style="display:none; color:#F98080; font-size:13px; margin-top:-8px; margin-bottom:16px;">
-      Veuillez sélectionner une option de paiement.
-    </p>
-
-    <div class="alert alert-warning">
-      <span class="alert-icon">⚠️</span>
-      <span>Le dépôt de 30 % (108 $) est <strong>non remboursable</strong> à partir du <strong>25 mai 2026</strong>. Assurez-vous de votre disponibilité avant de vous inscrire.</span>
-    </div>
+    <p class="err" id="errCert">Veuillez choisir un format de certificat.</p>
 
     <div class="btn-row">
       <button class="btn-back" onclick="prevStep(4)">← Retour</button>
-      <button class="btn-next" onclick="nextStep(4)"><span>Continuer →</span></button>
+      <button class="btn-next" onclick="nextStep(4)">Continuer →</button>
     </div>
   </div>
 
-  <!-- ─ STEP 5 : Certificat ──────────────────── -->
-  <div class="form-step" id="step-5">
-    <div class="step-header">
-      <p class="step-number">Étape 05 / 06</p>
-      <h2 class="step-title">Votre certificat<br>de participation</h2>
-      <p class="step-desc">Comment souhaitez-vous recevoir votre certificat à l'issue de la formation ?</p>
-    </div>
+  <!-- STEP 5 -->
+  <div class="fstep" id="step-5">
+    <p class="step-eye">Étape 05 / 06</p>
+    <h2 class="step-title">Consentements &<br><em>mentions légales</em></h2>
+    <p class="step-desc">Lisez attentivement et cochez les trois points pour continuer.</p>
 
-    <div class="cert-grid">
-      <div class="cert-card" id="cert1" onclick="selectCert('cert1')">
-        <input type="radio" name="cert" value="digital">
-        <div class="cert-icon">📧</div>
-        <div class="cert-label">Format Digital</div>
-        <div class="cert-sub">Envoyé par e-mail</div>
+    <div class="con-list">
+      <div class="con-row" id="con1" onclick="togCon('con1')">
+        <input type="checkbox">
+        <div class="chkbox"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0C0B08" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div>
+        <p class="con-txt"><span class="con-num">1 · Exactitude</span>Je certifie que toutes les informations fournies dans ce formulaire sont vraies et exactes.</p>
       </div>
-      <div class="cert-card" id="cert2" onclick="selectCert('cert2')">
-        <input type="radio" name="cert" value="physical">
-        <div class="cert-icon">🏅</div>
-        <div class="cert-label">Format Physique</div>
-        <div class="cert-sub">Remis à la fin du programme</div>
+      <div class="con-row" id="con2" onclick="togCon('con2')">
+        <input type="checkbox">
+        <div class="chkbox"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0C0B08" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div>
+        <p class="con-txt"><span class="con-num">2 · Droit à l'image</span>J'accepte d'être filmé(e) et photographié(e) durant toutes les séances. J'autorise l'utilisation de ces médias pour les pages de l'entreprise et les promotions futures.</p>
+      </div>
+      <div class="con-row" id="con3" onclick="togCon('con3')">
+        <input type="checkbox">
+        <div class="chkbox"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0C0B08" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div>
+        <p class="con-txt"><span class="con-num">3 · Matériel personnel</span>Je confirme avoir compris que je dois apporter mon propre ordinateur portable ou tablette pour la partie design.</p>
       </div>
     </div>
-
-    <p class="error-msg" id="certErr" style="display:none; color:#F98080; font-size:13px; margin-bottom:16px;">
-      Veuillez choisir un format de certificat.
-    </p>
+    <p class="err" id="errCon">Vous devez cocher les trois cases pour continuer.</p>
 
     <div class="btn-row">
       <button class="btn-back" onclick="prevStep(5)">← Retour</button>
-      <button class="btn-next" onclick="nextStep(5)"><span>Continuer →</span></button>
+      <button class="btn-next" onclick="nextStep(5)">Continuer →</button>
     </div>
   </div>
 
-  <!-- ─ STEP 6 : Consentements ───────────────── -->
-  <div class="form-step" id="step-6">
-    <div class="step-header">
-      <p class="step-number">Étape 06 / 06</p>
-      <h2 class="step-title">Consentements &<br>Mentions légales</h2>
-      <p class="step-desc">Veuillez lire attentivement et cocher chacun des points suivants pour valider votre inscription.</p>
-    </div>
+  <!-- STEP 6 : PAIEMENT — DERNIER -->
+  <div class="fstep" id="step-6">
+    <p class="step-eye">Étape 06 / 06 — Dernière étape</p>
+    <h2 class="step-title">Finalisez votre<br><em>inscription</em></h2>
+    <p class="step-desc">Choisissez votre option et procédez au paiement. <strong>Le paiement confirme automatiquement votre place</strong> — aucune étape supplémentaire requise.</p>
 
-    <div class="consent-list">
-      <div class="consent-item" id="con1" onclick="toggleConsent('con1')">
-        <label style="all:unset; cursor:pointer; display:flex; align-items:flex-start; gap:14px; width:100%">
-          <input type="checkbox" id="check1">
-          <div class="check-box">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0A0A0F" stroke-width="3.5">
-              <path d="m5 12 5 5L20 7"/>
-            </svg>
-          </div>
-          <p class="consent-text">
-            <span class="consent-num">1 · Exactitude</span>
-            Je certifie que toutes les informations fournies dans ce formulaire sont vraies et exactes.
-          </p>
-        </label>
+    <div class="pay-grid">
+      <div class="pcard" id="pay1" onclick="selPay('pay1')">
+        <input type="radio" name="payment" value="deposit">
+        <div class="ptag">Option 1 — Dépôt</div>
+        <div class="pamt">108 $</div>
+        <div class="pnote">30 % du total.<br><span class="pred">Non remboursable à partir du 25 mai.</span></div>
       </div>
-
-      <div class="consent-item" id="con2" onclick="toggleConsent('con2')">
-        <label style="all:unset; cursor:pointer; display:flex; align-items:flex-start; gap:14px; width:100%">
-          <input type="checkbox" id="check2">
-          <div class="check-box">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0A0A0F" stroke-width="3.5">
-              <path d="m5 12 5 5L20 7"/>
-            </svg>
-          </div>
-          <p class="consent-text">
-            <span class="consent-num">2 · Droit à l'image</span>
-            J'accepte d'être filmé(e) et photographié(e) durant toutes les séances. J'autorise l'utilisation de ces médias pour les pages de l'entreprise et les promotions futures.
-          </p>
-        </label>
-      </div>
-
-      <div class="consent-item" id="con3" onclick="toggleConsent('con3')">
-        <label style="all:unset; cursor:pointer; display:flex; align-items:flex-start; gap:14px; width:100%">
-          <input type="checkbox" id="check3">
-          <div class="check-box">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0A0A0F" stroke-width="3.5">
-              <path d="m5 12 5 5L20 7"/>
-            </svg>
-          </div>
-          <p class="consent-text">
-            <span class="consent-num">3 · Matériel personnel</span>
-            Je confirme avoir compris que je dois apporter mon propre ordinateur portable ou tablette pour la partie design de la formation.
-          </p>
-        </label>
+      <div class="pcard" id="pay2" onclick="selPay('pay2')">
+        <div class="pbadge">Recommandé</div>
+        <input type="radio" name="payment" value="full">
+        <div class="ptag">Option 2 — Complet</div>
+        <div class="pamt">360 $</div>
+        <div class="pnote">Paiement unique.<br>Place confirmée immédiatement.</div>
       </div>
     </div>
+    <p class="err" id="errPay">Veuillez sélectionner une option de paiement.</p>
 
-    <p class="error-msg" id="consentErr" style="display:none; color:#F98080; font-size:13px; margin-bottom:16px;">
-      Vous devez cocher les trois cases pour valider votre inscription.
-    </p>
+    <div class="note-box note-red">
+      <span>⚠️</span>
+      <span>Le dépôt de 30 % (108 $) est <strong>non remboursable à partir du 25 mai 2026</strong>.</span>
+    </div>
+
+    <div class="pp-section" id="ppSection">
+      <p class="pp-label">💳 Cliquez sur « Payer » — votre place est confirmée dès le paiement</p>
+      <div id="pp360" style="display:none">
+        <style>.ppA{text-align:center;border:none;border-radius:4px;min-width:180px;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;cursor:pointer;}</style>
+        <form action="https://www.paypal.com/ncp/payment/XNLQSQQPF6Q5A" method="post" target="_blank" style="display:inline-grid;justify-items:center;gap:.5rem;" onsubmit="onPay()">
+          <input class="ppA" type="submit" value="Payer 360 $ CAD"/>
+          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards"/>
+          <section style="font-size:.75rem;">Optimisé par <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:.875rem;vertical-align:middle;"/></section>
+        </form>
+      </div>
+      <div id="pp108" style="display:none">
+        <style>.ppB{text-align:center;border:none;border-radius:4px;min-width:180px;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;cursor:pointer;}</style>
+        <form action="https://www.paypal.com/ncp/payment/2J4YSD8T7Z9KG" method="post" target="_blank" style="display:inline-grid;justify-items:center;gap:.5rem;" onsubmit="onPay()">
+          <input class="ppB" type="submit" value="Payer 108 $ CAD"/>
+          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards"/>
+          <section style="font-size:.75rem;">Optimisé par <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:.875rem;vertical-align:middle;"/></section>
+        </form>
+      </div>
+    </div>
 
     <div class="btn-row">
       <button class="btn-back" onclick="prevStep(6)">← Retour</button>
-      <button class="btn-next" onclick="submitForm()" style="background: linear-gradient(135deg, #4CAF7D 0%, #2E7D52 100%);"><span>✓ Confirmer mon inscription</span></button>
     </div>
   </div>
 
-</div><!-- /form-section -->
+</div>
+</div>
 
-<!-- ── SUCCESS SCREEN ────────────────────────────── -->
-<div class="success-screen" id="successScreen">
-  <div class="success-icon">🎉</div>
-  <h2 class="success-title">Félicitations !<br>Votre place est réservée.</h2>
-  <p class="success-msg">
-    Vous recevrez un message de confirmation immédiat. Nous sommes ravis de vous accueillir pour cette formation unique.
-  </p>
-  <div class="success-steps">
-    <div class="s-step">
-      <div class="s-step-num">1</div>
-      <span>Un message de <strong>confirmation</strong> vous est envoyé immédiatement.</span>
-    </div>
-    <div class="s-step">
-      <div class="s-step-num">2</div>
-      <span>Le <strong>24 mai</strong>, vous recevrez l'horaire exact par e-mail.</span>
-    </div>
-    <div class="s-step">
-      <div class="s-step-num">3</div>
-      <span>Une semaine avant l'événement, un rappel WhatsApp avec l'adresse finale vous sera envoyé : <strong>8552 Boulevard Pie-IX, Montréal</strong>.</span>
-    </div>
-    <div class="s-step">
-      <div class="s-step-num">4</div>
-      <span>Le <strong>19 et 20 juin 2026</strong> — À vous de briller !</span>
-    </div>
+<!-- ══ SUCCESS ════════════════════════ -->
+<div class="suc-screen" id="sucScreen">
+  <div class="suc-ico">🎉</div>
+  <h2 class="suc-title">Félicitations !<br><em>Place réservée.</em></h2>
+  <p class="suc-msg">Votre paiement a été traité et votre inscription est confirmée. Nous sommes ravis de vous accueillir !</p>
+  <div class="suc-steps">
+    <div class="suc-row"><div class="suc-n">1</div><span>Un message de <strong>confirmation</strong> vous est envoyé immédiatement.</span></div>
+    <div class="suc-row"><div class="suc-n">2</div><span>Le <strong>24 mai</strong>, vous recevrez l'horaire exact par e-mail.</span></div>
+    <div class="suc-row"><div class="suc-n">3</div><span>Une semaine avant, un rappel avec l'adresse : <strong>8552 Boulevard Pie-IX, Montréal</strong>.</span></div>
+    <div class="suc-row"><div class="suc-n">4</div><span>Les <strong>19 et 20 juin 2026</strong> — À vous de briller !</span></div>
   </div>
 </div>
 
-<footer>
-  Formation <span>Lettrage & Impression</span> · 8552 Boulevard Pie-IX, Montréal · Inscriptions closes le 05 juin 2026
-</footer>
+<footer>Formation <span>Lettrage & Impression</span> · 8552 Boul. Pie-IX, Montréal · Inscriptions closes le 05 juin 2026</footer>
 
 <script>
-  let currentStep = 1;
-  const totalSteps = 6;
+let cur=1;
+const TOTAL=6;
 
-  function updateNav(step) {
-    document.querySelectorAll('.step-dot').forEach((dot, i) => {
-      dot.classList.remove('active', 'done');
-      const n = i + 1;
-      if (n < step) dot.classList.add('done');
-      else if (n === step) dot.classList.add('active');
-    });
-    const pct = (step / totalSteps) * 100;
-    document.getElementById('progressBar').style.width = pct + '%';
+function upNav(n){
+  document.querySelectorAll('.sn').forEach((el,i)=>{
+    el.classList.remove('active','done');
+    if(i+1<n)el.classList.add('done');
+    else if(i+1===n)el.classList.add('active');
+  });
+  document.getElementById('progFill').style.width=(n/TOTAL*100)+'%';
+}
+
+function showStep(n){
+  document.querySelectorAll('.fstep').forEach(s=>s.classList.remove('active'));
+  const el=document.getElementById('step-'+n);
+  if(el)el.classList.add('active');
+  upNav(n);cur=n;
+  window.scrollTo({top:document.getElementById('form').offsetTop-20,behavior:'smooth'});
+}
+
+function nextStep(f){if(valid(f))showStep(f+1);}
+function prevStep(f){showStep(f-1);}
+
+function valid(s){
+  let ok=true;
+  if(s===1){
+    const ln=document.getElementById('lastName'),fn=document.getElementById('firstName'),
+          em=document.getElementById('email'),ph=document.getElementById('phone');
+    [ln,fn,em,ph].forEach(f=>f.classList.remove('bad'));
+    document.querySelectorAll('.err').forEach(e=>e.classList.remove('on'));
+    if(!ln.value.trim()){ln.classList.add('bad');document.getElementById('errLN').classList.add('on');ok=false;}
+    if(!fn.value.trim()){fn.classList.add('bad');document.getElementById('errFN').classList.add('on');ok=false;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim())){em.classList.add('bad');document.getElementById('errEM').classList.add('on');ok=false;}
+    if(!ph.value.trim()){ph.classList.add('bad');document.getElementById('errPH').classList.add('on');ok=false;}
   }
-
-  function showStep(n) {
-    document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
-    const el = document.getElementById('step-' + n);
-    if (el) { el.classList.add('active'); }
-    updateNav(n);
-    currentStep = n;
-    window.scrollTo({ top: document.getElementById('form').offsetTop - 20, behavior: 'smooth' });
+  if(s===4){
+    const sel=document.querySelector('input[name=cert]:checked');
+    const err=document.getElementById('errCert');
+    if(!sel){err.classList.add('on');ok=false;}else err.classList.remove('on');
   }
-
-  function nextStep(from) {
-    if (!validateStep(from)) return;
-    showStep(from + 1);
+  if(s===5){
+    const ok1=document.getElementById('con1').classList.contains('chk'),
+          ok2=document.getElementById('con2').classList.contains('chk'),
+          ok3=document.getElementById('con3').classList.contains('chk');
+    const err=document.getElementById('errCon');
+    if(!ok1||!ok2||!ok3){err.classList.add('on');ok=false;}else err.classList.remove('on');
   }
+  return ok;
+}
 
-  function prevStep(from) {
-    showStep(from - 1);
-  }
+function selPay(id){
+  document.querySelectorAll('.pcard').forEach(c=>c.classList.remove('sel'));
+  document.getElementById(id).classList.add('sel');
+  document.querySelector('#'+id+' input[type=radio]').checked=true;
+  document.getElementById('errPay').classList.remove('on');
+  const isFull=(id==='pay2');
+  document.getElementById('ppSection').style.display='block';
+  document.getElementById('pp360').style.display=isFull?'block':'none';
+  document.getElementById('pp108').style.display=isFull?'none':'block';
+}
 
-  function validateStep(step) {
-    let valid = true;
+function selCert(id){
+  document.querySelectorAll('.ccard').forEach(c=>c.classList.remove('sel'));
+  document.getElementById(id).classList.add('sel');
+  document.querySelector('#'+id+' input[type=radio]').checked=true;
+  document.getElementById('errCert').classList.remove('on');
+}
 
-    if (step === 1) {
-      const ln = document.getElementById('lastName');
-      const fn = document.getElementById('firstName');
-      const em = document.getElementById('email');
-      const ph = document.getElementById('phone');
+function togCon(id){
+  const el=document.getElementById(id);
+  el.classList.toggle('chk');
+  const cb=el.querySelector('input[type=checkbox]');
+  if(cb)cb.checked=el.classList.contains('chk');
+  if(el.classList.contains('chk'))document.getElementById('errCon').classList.remove('on');
+}
 
-      [ln, fn, em, ph].forEach(f => { f.classList.remove('invalid'); });
-      document.querySelectorAll('.error-msg').forEach(e => e.classList.remove('visible'));
+function onPay(){
+  const nom=document.getElementById('lastName').value.trim();
+  const prenom=document.getElementById('firstName').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const tel=document.getElementById('phone').value.trim();
+  const payEl=document.querySelector('input[name=payment]:checked');
+  const certEl=document.querySelector('input[name=cert]:checked');
+  const payment=payEl?(payEl.value==='full'?'Paiement complet — 360 $':'Dépôt 30 % — 108 $'):'N/A';
+  const cert=certEl?(certEl.value==='digital'?'Digital (email)':'Physique'):'N/A';
+  const vendredi=[...document.querySelectorAll('#fri .chip.sel')].map(c=>c.textContent).join(', ')||'Aucune';
+  const samedi=[...document.querySelectorAll('#sat .chip.sel')].map(c=>c.textContent).join(', ')||'Aucune';
 
-      if (!ln.value.trim()) { ln.classList.add('invalid'); document.getElementById('lastNameErr').classList.add('visible'); valid = false; }
-      if (!fn.value.trim()) { fn.classList.add('invalid'); document.getElementById('firstNameErr').classList.add('visible'); valid = false; }
-      const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRx.test(em.value.trim())) { em.classList.add('invalid'); document.getElementById('emailErr').classList.add('visible'); valid = false; }
-      if (!ph.value.trim()) { ph.classList.add('invalid'); document.getElementById('phoneErr').classList.add('visible'); valid = false; }
-    }
+  emailjs.send('service_96tgvv1','template_9aqtrt6',{
+    nom,prenom,email,telephone:tel,paiement:payment,certificat:cert,vendredi,samedi
+  }).catch(()=>{});
 
-    if (step === 4) {
-      const sel = document.querySelector('input[name="payment"]:checked');
-      const err = document.getElementById('payErr');
-      if (!sel) { err.style.display = 'block'; valid = false; }
-      else { err.style.display = 'none'; }
-    }
-
-    if (step === 5) {
-      const sel = document.querySelector('input[name="cert"]:checked');
-      const err = document.getElementById('certErr');
-      if (!sel) { err.style.display = 'block'; valid = false; }
-      else { err.style.display = 'none'; }
-    }
-
-    return valid;
-  }
-
-  function submitForm() {
-    const c1 = document.getElementById('con1').classList.contains('checked');
-    const c2 = document.getElementById('con2').classList.contains('checked');
-    const c3 = document.getElementById('con3').classList.contains('checked');
-    const err = document.getElementById('consentErr');
-
-    if (!c1 || !c2 || !c3) {
-      err.style.display = 'block';
-      return;
-    }
-
-    err.style.display = 'none';
-
-    // Collect form data for notification
-    const nom     = document.getElementById('lastName').value.trim();
-    const prenom  = document.getElementById('firstName').value.trim();
-    const email   = document.getElementById('email').value.trim();
-    const tel     = document.getElementById('phone').value.trim();
-    const payEl   = document.querySelector('input[name="payment"]:checked');
-    const certEl  = document.querySelector('input[name="cert"]:checked');
-    const payment = payEl ? (payEl.value === 'full' ? 'Paiement complet – 360 $' : 'Dépôt 30 % – 108 $') : 'N/A';
-    const cert    = certEl ? (certEl.value === 'digital' ? 'Digital (email)' : 'Physique') : 'N/A';
-
-    // Collect selected time slots
-    const fridaySlots   = [...document.querySelectorAll('#friday-times .time-chip.selected')].map(c => c.textContent).join(', ') || 'Aucune';
-    const saturdaySlots = [...document.querySelectorAll('#saturday-times .time-chip.selected')].map(c => c.textContent).join(', ') || 'Aucune';
-
-    // ─── EmailJS Notification ───────────────────────────────────
-    emailjs.send('service_96tgvv1', 'template_9aqtrt6', {
-      nom:        nom,
-      prenom:     prenom,
-      email:      email,
-      telephone:  tel,
-      paiement:   payment,
-      certificat: cert,
-      vendredi:   fridaySlots,
-      samedi:     saturdaySlots
-    }).catch(() => {});
-    // ────────────────────────────────────────────────────────────
-
-    document.querySelector('.form-section').style.display = 'none';
-    document.getElementById('successScreen').classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function toggleChip(el) {
-    el.classList.toggle('selected');
-  }
-
-  function selectPayment(id) {
-    document.querySelectorAll('.payment-card').forEach(c => c.classList.remove('selected'));
-    document.getElementById(id).classList.add('selected');
-    const radio = document.querySelector('#' + id + ' input[type=radio]');
-    if (radio) radio.checked = true;
-    document.getElementById('payErr').style.display = 'none';
-  }
-
-  function selectCert(id) {
-    document.querySelectorAll('.cert-card').forEach(c => c.classList.remove('selected'));
-    document.getElementById(id).classList.add('selected');
-    const radio = document.querySelector('#' + id + ' input[type=radio]');
-    if (radio) radio.checked = true;
-    document.getElementById('certErr').style.display = 'none';
-  }
-
-  function toggleConsent(id) {
-    const item = document.getElementById(id);
-    item.classList.toggle('checked');
-    const cb = item.querySelector('input[type=checkbox]');
-    if (cb) cb.checked = item.classList.contains('checked');
-    if (item.classList.contains('checked')) document.getElementById('consentErr').style.display = 'none';
-  }
+  setTimeout(()=>{
+    document.getElementById('form').style.display='none';
+    document.getElementById('sucScreen').classList.add('on');
+    window.scrollTo({top:0,behavior:'smooth'});
+  },300);
+}
 </script>
 </body>
 </html>
