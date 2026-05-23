@@ -11,24 +11,24 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0C0B08;
-  --bg2:#141210;
-  --bg3:#1C1A16;
-  --bg4:#242018;
-  --cream:#F5EFE2;
-  --cream2:rgba(245,239,226,0.55);
-  --cream3:rgba(245,239,226,0.18);
-  --cream4:rgba(245,239,226,0.07);
-  --gold:#C8952A;
-  --gold2:#E0AA40;
-  --gold3:#F0C060;
-  --gold4:rgba(200,149,42,0.15);
-  --gold-b:rgba(200,149,42,0.28);
+  --bg:#0D1117;
+  --bg2:#161B22;
+  --bg3:#1C2430;
+  --bg4:#242F3E;
+  --cream:#E8F4FD;
+  --cream2:rgba(232,244,253,0.60);
+  --cream3:rgba(232,244,253,0.22);
+  --cream4:rgba(232,244,253,0.07);
+  --gold:#5B9BD5;
+  --gold2:#79B4E8;
+  --gold3:#A8D4F5;
+  --gold4:rgba(91,155,213,0.15);
+  --gold-b:rgba(91,155,213,0.28);
   --red:#C04040;
   --red-bg:rgba(192,64,64,0.1);
   --red-b:rgba(192,64,64,0.28);
   --green:#3A8A58;
-  --border:rgba(245,239,226,0.08);
+  --border:rgba(232,244,253,0.08);
   --r:6px;
 }
 html{scroll-behavior:smooth}
@@ -43,9 +43,9 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--cream);ove
 .hero-bg{
   position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 90% 70% at 60% -10%, rgba(200,149,42,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 10% 90%, rgba(200,149,42,0.06) 0%, transparent 55%),
-    linear-gradient(170deg, #0E0C09 0%, #0C0B08 100%);
+    radial-gradient(ellipse 90% 70% at 60% -10%, rgba(91,155,213,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 90%, rgba(91,155,213,0.06) 0%, transparent 55%),
+    linear-gradient(170deg, #0E0C09 0%, #0D1117 100%);
 }
 .hero-lines{
   position:absolute;inset:0;pointer-events:none;
@@ -58,14 +58,14 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--cream);ove
 .hero-accent{
   position:absolute;right:0;top:0;bottom:0;width:45%;
   border-left:1px solid var(--border);
-  background:linear-gradient(180deg, rgba(200,149,42,0.04) 0%, transparent 60%);
+  background:linear-gradient(180deg, rgba(91,155,213,0.04) 0%, transparent 60%);
   pointer-events:none;
 }
 .hero-accent::before{
   content:'';position:absolute;
   top:50%;left:50%;transform:translate(-50%,-50%);
   width:400px;height:400px;border-radius:50%;
-  border:1px solid rgba(200,149,42,0.06);
+  border:1px solid rgba(91,155,213,0.06);
 }
 .hero > *{position:relative;z-index:1;}
 
@@ -150,12 +150,12 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--cream);ove
   display:inline-flex;align-items:center;gap:14px;
   padding:16px 40px;
   background:linear-gradient(135deg, var(--gold) 0%, #A07020 100%);
-  color:#0C0B08;font-family:'Outfit',sans-serif;font-size:11px;
+  color:#0D1117;font-family:'Outfit',sans-serif;font-size:11px;
   font-weight:600;letter-spacing:0.22em;text-transform:uppercase;
   text-decoration:none;border-radius:var(--r);
   transition:all 0.3s;
 }
-.cta-btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(200,149,42,0.3);filter:brightness(1.08);}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(91,155,213,0.3);filter:brightness(1.08);}
 .cta-btn svg{transition:transform .3s;}
 .cta-btn:hover svg{transform:translateX(4px);}
 
@@ -171,8 +171,8 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--cream);ove
 .sn:not(:last-child)::after{content:'';position:absolute;top:11px;left:calc(50% + 11px);width:calc(100% - 22px);height:1px;background:var(--bg4);transition:background .4s;}
 .sn.done:not(:last-child)::after,.sn.active:not(:last-child)::after{background:var(--gold);}
 .sn-c{width:22px;height:22px;border-radius:50%;border:1px solid var(--bg4);background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:400;color:var(--cream3);position:relative;z-index:1;transition:all .3s;}
-.sn.active .sn-c{border-color:var(--gold);color:var(--gold2);box-shadow:0 0 0 3px rgba(200,149,42,0.12);}
-.sn.done .sn-c{background:var(--gold);border-color:var(--gold);color:var(--bg);font-size:0;}
+.sn.active .sn-c{border-color:var(--gold);color:var(--gold2);box-shadow:0 0 0 3px rgba(91,155,213,0.12);}
+.sn.done .sn-c{background:var(--gold);border-color:var(--gold);color:#0D1117;font-size:0;}
 .sn.done .sn-c::after{content:'✓';font-size:11px;}
 .sn-l{font-size:9px;font-weight:400;letter-spacing:0.07em;text-transform:uppercase;color:var(--cream3);text-align:center;white-space:nowrap;transition:color .3s;}
 .sn.active .sn-l{color:var(--gold2);}
@@ -204,7 +204,7 @@ input[type=text],input[type=email],input[type=tel]{
   padding:13px 16px;outline:none;
   transition:border-color .25s,box-shadow .25s;-webkit-appearance:none;
 }
-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,149,42,0.1);}
+input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(91,155,213,0.1);}
 input.bad{border-color:rgba(192,64,64,0.6);}
 input::placeholder{color:var(--cream3);opacity:0.6;}
 
@@ -215,7 +215,7 @@ input::placeholder{color:var(--cream3);opacity:0.6;}
   display:flex;gap:12px;padding:14px 18px;border-radius:var(--r);
   margin-bottom:18px;font-size:13.5px;font-weight:300;line-height:1.65;
 }
-.note-gold{background:rgba(200,149,42,0.08);border:1px solid var(--gold-b);color:rgba(224,170,64,0.85);}
+.note-gold{background:rgba(91,155,213,0.08);border:1px solid var(--gold-b);color:rgba(224,170,64,0.85);}
 .note-red{background:var(--red-bg);border:1px solid var(--red-b);color:rgba(224,140,140,0.9);}
 .note-box strong{font-weight:500;color:inherit;}
 
@@ -240,7 +240,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:28px 0;}
   cursor:pointer;transition:all .2s;user-select:none;
 }
 .chip:hover{border-color:var(--gold-b);color:var(--cream2);}
-.chip.sel{border-color:var(--gold);background:rgba(200,149,42,0.12);color:var(--gold2);}
+.chip.sel{border-color:var(--gold);background:rgba(91,155,213,0.12);color:var(--gold2);}
 
 /* Cert */
 .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
@@ -248,7 +248,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:28px 0;}
 .ccard{padding:22px 18px;border:1.5px solid var(--bg4);border-radius:var(--r);cursor:pointer;transition:all .25s;text-align:center;background:var(--bg2);position:relative;}
 .ccard input[type=radio]{position:absolute;opacity:0;width:0;height:0;}
 .ccard:hover{border-color:var(--gold-b);}
-.ccard.sel{border-color:var(--gold);background:rgba(200,149,42,0.1);}
+.ccard.sel{border-color:var(--gold);background:rgba(91,155,213,0.1);}
 .ccard-ico{font-size:1.8rem;margin-bottom:10px;}
 .ccard-name{font-size:14px;font-weight:400;color:var(--cream);}
 .ccard-sub{font-size:11px;font-weight:300;color:var(--cream3);margin-top:4px;}
@@ -261,7 +261,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:28px 0;}
   transition:all .2s;background:var(--bg2);
 }
 .con-row:hover{border-color:var(--gold-b);}
-.con-row.chk{border-color:var(--gold);background:rgba(200,149,42,0.08);}
+.con-row.chk{border-color:var(--gold);background:rgba(91,155,213,0.08);}
 .con-row input[type=checkbox]{position:absolute;opacity:0;width:0;height:0;}
 .chkbox{
   width:20px;height:20px;border-radius:3px;border:1px solid var(--bg4);
@@ -280,18 +280,18 @@ hr.div{border:none;border-top:1px solid var(--border);margin:28px 0;}
 @media(max-width:460px){.pay-grid{grid-template-columns:1fr}}
 .pcard{position:relative;padding:24px 20px;border:1.5px solid var(--bg4);border-radius:var(--r);cursor:pointer;transition:all .25s;background:var(--bg2);}
 .pcard:hover{border-color:var(--gold-b);}
-.pcard.sel{border-color:var(--gold);background:rgba(200,149,42,0.1);}
+.pcard.sel{border-color:var(--gold);background:rgba(91,155,213,0.1);}
 .pcard input[type=radio]{position:absolute;opacity:0;width:0;height:0;}
 .ptag{font-size:9px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--cream3);margin-bottom:10px;}
 .pamt{font-family:'Cormorant',serif;font-size:3rem;font-weight:300;color:var(--gold2);line-height:1;margin-bottom:8px;}
 .pnote{font-size:12px;font-weight:300;color:var(--cream3);line-height:1.6;}
 .pred{color:#E09090;font-weight:400;}
-.pbadge{position:absolute;top:0;right:12px;background:var(--gold);color:var(--bg);font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:3px 10px;border-radius:0 0 4px 4px;}
+.pbadge{position:absolute;top:0;right:12px;background:var(--gold);color:#0D1117;font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:3px 10px;border-radius:0 0 4px 4px;}
 .pcard.sel .ptag{color:var(--gold2);}
 
 .pp-section{
   display:none;margin-top:20px;padding:24px;
-  border:1px solid var(--gold-b);background:rgba(200,149,42,0.06);
+  border:1px solid var(--gold-b);background:rgba(91,155,213,0.06);
   border-radius:var(--r);text-align:center;
 }
 .pp-label{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:18px;opacity:.8;}
@@ -307,7 +307,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:28px 0;}
 .btn-back:hover{border-color:var(--cream3);color:var(--cream2);}
 .btn-next{
   flex:1;padding:15px 28px;background:var(--cream);border:none;border-radius:var(--r);
-  color:var(--bg);font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;
+  color:#0D1117;font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;
   letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all .25s;
 }
 .btn-next:hover{background:#fff;transform:translateY(-1px);box-shadow:0 10px 28px rgba(0,0,0,0.35);}
@@ -327,7 +327,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:28px 0;}
 .suc-msg{font-size:15px;font-weight:300;color:var(--cream3);line-height:1.75;max-width:440px;margin:0 auto 40px;}
 .suc-steps{display:flex;flex-direction:column;gap:12px;text-align:left;border:1px solid var(--border);border-radius:var(--r);padding:24px;background:var(--bg2);}
 .suc-row{display:flex;gap:14px;font-size:13px;font-weight:300;color:var(--cream3);line-height:1.6;}
-.suc-n{width:22px;height:22px;border-radius:50%;background:rgba(200,149,42,0.1);border:1px solid var(--gold-b);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:var(--gold2);flex-shrink:0;}
+.suc-n{width:22px;height:22px;border-radius:50%;background:rgba(91,155,213,0.1);border:1px solid var(--gold-b);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:var(--gold2);flex-shrink:0;}
 .suc-row strong{font-weight:500;color:var(--cream2);}
 
 footer{text-align:center;padding:28px;font-size:10px;font-weight:400;letter-spacing:0.12em;color:var(--cream3);border-top:1px solid var(--border);}
@@ -423,7 +423,7 @@ footer span{color:var(--gold2);}
     </div>
     <div class="note-box note-gold">
       <span>📧</span>
-      <span>L'horaire pré-sélectionné vous sera communiqué par e-mail <strong>le 24 mai</strong>. Vérifiez que votre adresse est correcte.</span>
+      <span>L'horaire pré-sélectionné vous sera communiqué par e-mail <strong>le 29 mai</strong>. Vérifiez que votre adresse est correcte.</span>
     </div>
     <div class="fld">
       <label>Numéro de téléphone <span class="req">*</span></label>
@@ -451,7 +451,7 @@ footer span{color:var(--gold2);}
     </div>
     <div class="icard">
       <p class="icard-top">👕 Tenue de pratique</p>
-      <p>Un <strong>maillot de pratique</strong> est fourni sur place. Aucun uniforme à récupérer à l'avance. Portez simplement une tenue confortable.</p>
+      <p>Un <strong>maillot de pratique</strong> est fourni sur place. Portez simplement une tenue confortable.</p>
     </div>
     <div class="note-box note-red">
       <span>⚠️</span>
@@ -530,17 +530,17 @@ footer span{color:var(--gold2);}
     <div class="con-list">
       <div class="con-row" id="con1" onclick="togCon('con1')">
         <input type="checkbox">
-        <div class="chkbox"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0C0B08" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div>
+        <div class="chkbox"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0D1117" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div>
         <p class="con-txt"><span class="con-num">1 · Exactitude</span>Je certifie que toutes les informations fournies dans ce formulaire sont vraies et exactes.</p>
       </div>
       <div class="con-row" id="con2" onclick="togCon('con2')">
         <input type="checkbox">
-        <div class="chkbox"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0C0B08" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div>
+        <div class="chkbox"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0D1117" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div>
         <p class="con-txt"><span class="con-num">2 · Droit à l'image</span>J'accepte d'être filmé(e) et photographié(e) durant toutes les séances. J'autorise l'utilisation de ces médias pour les pages de l'entreprise et les promotions futures.</p>
       </div>
       <div class="con-row" id="con3" onclick="togCon('con3')">
         <input type="checkbox">
-        <div class="chkbox"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0C0B08" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div>
+        <div class="chkbox"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0D1117" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div>
         <p class="con-txt"><span class="con-num">3 · Matériel personnel</span>Je confirme avoir compris que je dois apporter mon propre ordinateur portable ou tablette pour la partie design.</p>
       </div>
     </div>
@@ -563,7 +563,7 @@ footer span{color:var(--gold2);}
         <input type="radio" name="payment" value="deposit">
         <div class="ptag">Option 1 — Dépôt</div>
         <div class="pamt">108 $</div>
-        <div class="pnote">30 % du total.<br><span class="pred">Non remboursable à partir du 25 mai.</span></div>
+        <div class="pnote">30 % du total.<br><span class="pred">Non remboursable à partir du 30 mai.</span></div>
       </div>
       <div class="pcard" id="pay2" onclick="selPay('pay2')">
         <div class="pbadge">Recommandé</div>
@@ -577,12 +577,15 @@ footer span{color:var(--gold2);}
 
     <div class="note-box note-red">
       <span>⚠️</span>
-      <span>Le dépôt de 30 % (108 $) est <strong>non remboursable à partir du 25 mai 2026</strong>.</span>
+      <span>Le dépôt de 30 % (108 $) est <strong>non remboursable à partir du 30 mai 2026</strong>.</span>
     </div>
 
     <div class="pp-section" id="ppSection">
-      <p class="pp-label">💳 Cliquez sur « Payer » — votre place est confirmée dès le paiement</p>
-      <div id="pp360" style="display:none">
+      <p class="pp-label">💳 Payez directement ici — votre place est confirmée dès le paiement</p>
+      <div id="paypal-btn-container"></div>
+      <p style="font-size:11px;font-weight:300;color:var(--cream3);margin-top:14px;text-align:center;">Paiement sécurisé · Carte bancaire acceptée</p>
+    </div>
+    <div style="display:none" id="pp360">
         <style>.ppA{text-align:center;border:none;border-radius:4px;min-width:180px;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;cursor:pointer;}</style>
         <form action="https://www.paypal.com/ncp/payment/XNLQSQQPF6Q5A" method="post" target="_blank" style="display:inline-grid;justify-items:center;gap:.5rem;" onsubmit="onPay()">
           <input class="ppA" type="submit" value="Payer 360 $ CAD"/>
@@ -615,7 +618,7 @@ footer span{color:var(--gold2);}
   <p class="suc-msg">Votre paiement a été traité et votre inscription est confirmée. Nous sommes ravis de vous accueillir !</p>
   <div class="suc-steps">
     <div class="suc-row"><div class="suc-n">1</div><span>Un message de <strong>confirmation</strong> vous est envoyé immédiatement.</span></div>
-    <div class="suc-row"><div class="suc-n">2</div><span>Le <strong>24 mai</strong>, vous recevrez l'horaire exact par e-mail.</span></div>
+    <div class="suc-row"><div class="suc-n">2</div><span>Le <strong>29 mai</strong>, vous recevrez l'horaire exact par e-mail.</span></div>
     <div class="suc-row"><div class="suc-n">3</div><span>Une semaine avant, un rappel avec l'adresse : <strong>8552 Boulevard Pie-IX, Montréal</strong>.</span></div>
     <div class="suc-row"><div class="suc-n">4</div><span>Les <strong>19 et 20 juin 2026</strong> — À vous de briller !</span></div>
   </div>
@@ -623,9 +626,12 @@ footer span{color:var(--gold2);}
 
 <footer>Formation <span>Lettrage & Impression</span> · 8552 Boul. Pie-IX, Montréal · Inscriptions closes le 05 juin 2026</footer>
 
+<script src="https://www.paypal.com/sdk/js?client-id=BAAlVQeLUpliRYytFOvP6cKdzraygIQT9wMNY0gdFSUwF3LfDFodUjJDTCMlRsRLRY-BL2H4hUILWXBmkw&currency=CAD&components=buttons&disable-funding=venmo,paylater"></script>
 <script>
 let cur=1;
 const TOTAL=6;
+let ppRendered=false;
+let selectedAmount=0;
 
 function upNav(n){
   document.querySelectorAll('.sn').forEach((el,i)=>{
@@ -679,10 +685,51 @@ function selPay(id){
   document.getElementById(id).classList.add('sel');
   document.querySelector('#'+id+' input[type=radio]').checked=true;
   document.getElementById('errPay').classList.remove('on');
-  const isFull=(id==='pay2');
+
+  selectedAmount = (id==='pay2') ? '360.00' : '108.00';
+
+  // Vide le container et re-rend les boutons PayPal avec le bon montant
+  const container = document.getElementById('paypal-btn-container');
+  container.innerHTML = '';
+  ppRendered = false;
+
   document.getElementById('ppSection').style.display='block';
-  document.getElementById('pp360').style.display=isFull?'block':'none';
-  document.getElementById('pp108').style.display=isFull?'none':'block';
+  renderPayPal();
+}
+
+function renderPayPal(){
+  if(ppRendered) return;
+  ppRendered = true;
+
+  paypal.Buttons({
+    style:{
+      layout:'vertical',
+      color:'gold',
+      shape:'rect',
+      label:'pay',
+      height:45
+    },
+    createOrder: function(data, actions){
+      return actions.order.create({
+        purchase_units:[{
+          description: 'Formation Lettrage & Impression 2026',
+          amount:{
+            currency_code:'CAD',
+            value: selectedAmount
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions){
+      return actions.order.capture().then(function(details){
+        // Peman konfime — voye notifikasyon epi montre ekran siksè
+        onPayConfirmed(details);
+      });
+    },
+    onError: function(err){
+      console.error('PayPal error:', err);
+    }
+  }).render('#paypal-btn-container');
 }
 
 function selCert(id){
@@ -700,7 +747,7 @@ function togCon(id){
   if(el.classList.contains('chk'))document.getElementById('errCon').classList.remove('on');
 }
 
-function onPay(){
+function onPayConfirmed(details){
   const nom=document.getElementById('lastName').value.trim();
   const prenom=document.getElementById('firstName').value.trim();
   const email=document.getElementById('email').value.trim();
@@ -712,15 +759,15 @@ function onPay(){
   const vendredi=[...document.querySelectorAll('#fri .chip.sel')].map(c=>c.textContent).join(', ')||'Aucune';
   const samedi=[...document.querySelectorAll('#sat .chip.sel')].map(c=>c.textContent).join(', ')||'Aucune';
 
+  // Voye email notifikasyon SÈLMAN apre peman konfime
   emailjs.send('service_96tgvv1','template_9aqtrt6',{
     nom,prenom,email,telephone:tel,paiement:payment,certificat:cert,vendredi,samedi
   }).catch(()=>{});
 
-  setTimeout(()=>{
-    document.getElementById('form').style.display='none';
-    document.getElementById('sucScreen').classList.add('on');
-    window.scrollTo({top:0,behavior:'smooth'});
-  },300);
+  // Montre ekran siksè
+  document.getElementById('form').style.display='none';
+  document.getElementById('sucScreen').classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 </script>
 </body>
