@@ -5,391 +5,328 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Formation Lettrage & Impression — Inscription 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Outfit:wght@200;300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@200;300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>emailjs.init('kMKh2aanXxHg6Ollc');</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0D1117;
-  --bg2:#161B22;
-  --bg3:#1C2430;
-  --bg4:#242F3E;
-  --cream:#E8F4FD;
-  --cream2:rgba(232,244,253,0.60);
-  --cream3:rgba(232,244,253,0.22);
-  --cream4:rgba(232,244,253,0.07);
-  --gold:#5B9BD5;
-  --gold2:#79B4E8;
-  --gold3:#A8D4F5;
-  --gold4:rgba(91,155,213,0.15);
-  --gold-b:rgba(91,155,213,0.28);
-  --red:#C04040;
-  --red-bg:rgba(192,64,64,0.1);
-  --red-b:rgba(192,64,64,0.28);
-  --green:#3A8A58;
-  --border:rgba(232,244,253,0.08);
-  --r:6px;
+  --bg:#F7F4EF;
+  --bg2:#FFFFFF;
+  --bg3:#F0EBE3;
+  --bg4:#E6DFD5;
+  --ink:#1C1410;
+  --ink2:#3D3228;
+  --ink3:#8C7B6A;
+  --accent:#2D5A8E;
+  --accent2:#3A72B0;
+  --accent3:#6FA3D4;
+  --accent-bg:rgba(45,90,142,0.07);
+  --accent-b:rgba(45,90,142,0.2);
+  --terr:#B85C38;
+  --terr-bg:rgba(184,92,56,0.08);
+  --terr-b:rgba(184,92,56,0.25);
+  --green:#2D7A52;
+  --border:rgba(28,20,16,0.1);
+  --shadow:0 2px 20px rgba(28,20,16,0.08);
+  --r:8px;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--cream);overflow-x:hidden}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
 
-/* ══════════════ HERO ══════════════ */
+/* ═══════ HERO ═══════ */
 .hero{
   position:relative;min-height:100vh;
-  display:flex;flex-direction:column;
-  overflow:hidden;
+  display:flex;flex-direction:column;overflow:hidden;
+  background:var(--ink);
 }
-.hero-bg{
+.hero-texture{
   position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 90% 70% at 60% -10%, rgba(91,155,213,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 10% 90%, rgba(91,155,213,0.06) 0%, transparent 55%),
-    linear-gradient(170deg, #0E0C09 0%, #0D1117 100%);
+    radial-gradient(ellipse 80% 60% at 65% 0%, rgba(45,90,142,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 0% 80%, rgba(184,92,56,0.15) 0%, transparent 55%),
+    linear-gradient(160deg,#1C1410 0%,#0F0C09 100%);
 }
-.hero-lines{
+.hero-grid{
   position:absolute;inset:0;pointer-events:none;
   background-image:
-    linear-gradient(rgba(245,239,226,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(245,239,226,0.025) 1px, transparent 1px);
-  background-size:80px 80px;
-  mask-image:radial-gradient(ellipse 80% 80% at 70% 20%, black 0%, transparent 70%);
+    linear-gradient(rgba(247,244,239,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(247,244,239,0.03) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(ellipse 70% 70% at 60% 20%,black,transparent 80%);
 }
-.hero-accent{
-  position:absolute;right:0;top:0;bottom:0;width:45%;
-  border-left:1px solid var(--border);
-  background:linear-gradient(180deg, rgba(91,155,213,0.04) 0%, transparent 60%);
-  pointer-events:none;
-}
-.hero-accent::before{
-  content:'';position:absolute;
-  top:50%;left:50%;transform:translate(-50%,-50%);
-  width:400px;height:400px;border-radius:50%;
-  border:1px solid rgba(91,155,213,0.06);
-}
-.hero > *{position:relative;z-index:1;}
-
-.hero-top{
+.hero>*{position:relative;z-index:1;}
+.hero-inner{
   flex:1;display:flex;align-items:center;
-  padding:120px 72px 60px;max-width:1140px;width:100%;margin:0 auto;
+  max-width:1100px;width:100%;margin:0 auto;
+  padding:120px 64px 60px;gap:72px;
 }
-@media(max-width:800px){.hero-top{padding:100px 28px 48px;flex-direction:column;align-items:flex-start;}}
+@media(max-width:840px){.hero-inner{flex-direction:column;gap:40px;padding:100px 28px 48px;align-items:flex-start;}}
 
 .hero-left{flex:1;}
-
-.htag{
-  display:inline-flex;align-items:center;gap:12px;
-  font-family:'Outfit',sans-serif;font-weight:300;font-size:11px;
-  letter-spacing:0.3em;text-transform:uppercase;color:var(--gold2);
-  margin-bottom:32px;
+.h-sup{
+  display:inline-flex;align-items:center;gap:12px;margin-bottom:28px;
+  font-size:10px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;
+  color:rgba(111,163,212,0.7);
 }
-.htag::before{content:'';width:32px;height:1px;background:var(--gold2);opacity:0.5;}
-
-.hero-h1{
-  font-family:'Cormorant',serif;
-  font-size:clamp(4.5rem,9vw,10rem);
-  font-weight:300;line-height:0.9;
-  color:var(--cream);letter-spacing:-0.02em;
-  margin-bottom:4px;
+.h-sup::before{content:'';width:28px;height:1px;background:rgba(111,163,212,0.4);}
+.h-title{
+  font-family:'Cormorant',serif;font-weight:300;line-height:0.92;
+  font-size:clamp(4.2rem,8.5vw,9.5rem);
+  color:#F7F4EF;letter-spacing:-0.02em;margin-bottom:6px;
 }
-.hero-h1 span{
-  font-style:italic;
-  background:linear-gradient(135deg, var(--gold2) 0%, var(--gold3) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+.h-title-2{
+  font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(2rem,4vw,4.8rem);
+  color:var(--accent3);line-height:1;letter-spacing:0.01em;margin-bottom:44px;
 }
-
-.hero-h2{
-  font-family:'DM Serif Display',serif;
-  font-size:clamp(2rem,4vw,4.5rem);
-  font-style:italic;font-weight:400;
-  color:rgba(245,239,226,0.35);
-  line-height:1;letter-spacing:0.02em;
-  margin-bottom:48px;
-}
+.h-desc{font-size:15px;font-weight:300;color:rgba(247,244,239,0.45);line-height:1.8;max-width:380px;}
+.h-desc strong{color:rgba(247,244,239,0.75);font-weight:500;}
 
 .hero-right{
-  width:320px;flex-shrink:0;margin-left:80px;
-  display:flex;flex-direction:column;gap:0;
+  width:280px;flex-shrink:0;
+  display:flex;flex-direction:column;
 }
-@media(max-width:800px){.hero-right{width:100%;margin-left:0;margin-top:32px;}}
-
-.hinfo-row{
-  padding:18px 0;border-bottom:1px solid var(--border);
-  display:flex;flex-direction:column;gap:4px;
-}
-.hinfo-row:first-child{border-top:1px solid var(--border);}
-.hinfo-label{font-size:9px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold2);opacity:0.7;}
-.hinfo-val{font-size:15px;font-weight:300;color:var(--cream);}
-.hinfo-val strong{font-weight:500;}
-
+@media(max-width:840px){.hero-right{width:100%;}}
+.hinfo{padding:16px 0;border-bottom:1px solid rgba(247,244,239,0.07);}
+.hinfo:first-child{border-top:1px solid rgba(247,244,239,0.07);}
+.hinfo-lbl{font-size:9px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(111,163,212,0.55);margin-bottom:4px;}
+.hinfo-val{font-size:14px;font-weight:300;color:rgba(247,244,239,0.75);}
+.hinfo-val strong{font-weight:500;color:#F7F4EF;}
 .urgency{
-  margin-top:20px;display:flex;align-items:center;gap:10px;
-  padding:12px 16px;background:var(--red-bg);border:1px solid var(--red-b);
-  border-radius:var(--r);font-size:12px;font-weight:400;color:#E09090;
-  letter-spacing:0.04em;
+  margin-top:18px;display:flex;align-items:center;gap:10px;
+  padding:11px 16px;background:rgba(184,92,56,0.12);
+  border:1px solid rgba(184,92,56,0.28);border-radius:var(--r);
+  font-size:12px;font-weight:400;color:rgba(220,140,100,0.9);
 }
-.urgency-dot{width:6px;height:6px;border-radius:50%;background:#E08080;flex-shrink:0;animation:blink 1.6s infinite;}
+.u-dot{width:6px;height:6px;border-radius:50%;background:#E09060;flex-shrink:0;animation:blink 1.8s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 
-.hero-bottom{
-  padding:0 72px 56px;max-width:1140px;width:100%;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+.hero-foot{
+  max-width:1100px;width:100%;margin:0 auto;
+  padding:0 64px 52px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
 }
-@media(max-width:800px){.hero-bottom{padding:0 28px 48px;}}
-
-.dates-row{display:flex;gap:10px;}
-.dcard{
-  text-align:center;padding:12px 24px;
-  border:1px solid var(--gold-b);border-radius:var(--r);
-  background:var(--gold4);
-}
-.dcard-n{font-family:'Cormorant',serif;font-size:3rem;font-weight:300;color:var(--gold3);line-height:1;}
-.dcard-l{font-size:9px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--cream3);margin-top:2px;}
-
-.cta-btn{
+@media(max-width:840px){.hero-foot{padding:0 28px 44px;}}
+.dates{display:flex;gap:10px;}
+.dcard{text-align:center;padding:12px 22px;border:1px solid rgba(45,90,142,0.3);border-radius:var(--r);background:rgba(45,90,142,0.08);}
+.dcard-n{font-family:'Cormorant',serif;font-size:2.8rem;font-weight:300;color:var(--accent3);line-height:1;}
+.dcard-l{font-size:9px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:rgba(247,244,239,0.3);margin-top:2px;}
+.cta{
   display:inline-flex;align-items:center;gap:14px;
-  padding:16px 40px;
-  background:linear-gradient(135deg, var(--gold) 0%, #A07020 100%);
-  color:#0D1117;font-family:'Outfit',sans-serif;font-size:11px;
-  font-weight:600;letter-spacing:0.22em;text-transform:uppercase;
-  text-decoration:none;border-radius:var(--r);
-  transition:all 0.3s;
+  padding:15px 38px;background:var(--accent2);color:#F7F4EF;
+  font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;
+  border-radius:var(--r);transition:all .28s;
 }
-.cta-btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(91,155,213,0.3);filter:brightness(1.08);}
-.cta-btn svg{transition:transform .3s;}
-.cta-btn:hover svg{transform:translateX(4px);}
+.cta:hover{background:#4A84C2;transform:translateY(-2px);box-shadow:0 12px 32px rgba(45,90,142,0.35);}
+.cta svg{transition:transform .28s;}
+.cta:hover svg{transform:translateX(4px);}
 
-/* ══════════════ FORM ══════════════ */
-.form-wrap{max-width:660px;margin:0 auto;padding:88px 28px 120px;}
+/* ═══════ FORM AREA ═══════ */
+.form-area{background:var(--bg);padding:80px 0 100px;}
+.form-wrap{max-width:640px;margin:0 auto;padding:0 28px;}
 
-.prog-bar{height:1px;background:var(--bg4);margin-bottom:56px;}
-.prog-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold3));transition:width .5s cubic-bezier(.4,0,.2,1);}
+.prog-bar{height:2px;background:var(--bg4);border-radius:100px;margin-bottom:52px;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent3));border-radius:100px;transition:width .5s cubic-bezier(.4,0,.2,1);}
 
-.step-nav{display:flex;margin-bottom:52px;overflow-x:auto;}
-.step-nav::-webkit-scrollbar{display:none}
+.snav{display:flex;margin-bottom:52px;overflow-x:auto;}
+.snav::-webkit-scrollbar{display:none}
 .sn{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;min-width:44px;position:relative;}
 .sn:not(:last-child)::after{content:'';position:absolute;top:11px;left:calc(50% + 11px);width:calc(100% - 22px);height:1px;background:var(--bg4);transition:background .4s;}
-.sn.done:not(:last-child)::after,.sn.active:not(:last-child)::after{background:var(--gold);}
-.sn-c{width:22px;height:22px;border-radius:50%;border:1px solid var(--bg4);background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:400;color:var(--cream3);position:relative;z-index:1;transition:all .3s;}
-.sn.active .sn-c{border-color:var(--gold);color:var(--gold2);box-shadow:0 0 0 3px rgba(91,155,213,0.12);}
-.sn.done .sn-c{background:var(--gold);border-color:var(--gold);color:#0D1117;font-size:0;}
+.sn.done:not(:last-child)::after,.sn.active:not(:last-child)::after{background:var(--accent2);}
+.sn-c{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--bg4);background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:var(--ink3);position:relative;z-index:1;transition:all .3s;}
+.sn.active .sn-c{border-color:var(--accent2);color:var(--accent);box-shadow:0 0 0 3px rgba(45,90,142,0.12);}
+.sn.done .sn-c{background:var(--accent2);border-color:var(--accent2);color:#fff;font-size:0;}
 .sn.done .sn-c::after{content:'✓';font-size:11px;}
-.sn-l{font-size:9px;font-weight:400;letter-spacing:0.07em;text-transform:uppercase;color:var(--cream3);text-align:center;white-space:nowrap;transition:color .3s;}
-.sn.active .sn-l{color:var(--gold2);}
-.sn.done .sn-l{color:var(--cream2);}
+.sn-l{font-size:9px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink3);text-align:center;white-space:nowrap;transition:color .3s;}
+.sn.active .sn-l{color:var(--accent);}
+.sn.done .sn-l{color:var(--ink2);}
 
-.fstep{display:none;animation:fadeUp .4s ease both;}
+.fstep{display:none;animation:up .4s ease both;}
 .fstep.active{display:block;}
-@keyframes fadeUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes up{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
 
-.step-eye{font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold2);margin-bottom:14px;opacity:.7;}
-.step-title{
-  font-family:'Cormorant',serif;
-  font-size:clamp(2.6rem,5vw,4.2rem);
-  font-weight:300;line-height:1;letter-spacing:-0.01em;
-  color:var(--cream);margin-bottom:10px;
-}
-.step-title em{font-style:italic;color:var(--gold2);}
-.step-desc{font-size:14px;font-weight:300;color:var(--cream3);line-height:1.75;margin-bottom:36px;max-width:500px;}
+.seye{font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.stitle{font-family:'Cormorant',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:300;line-height:1;color:var(--ink);margin-bottom:10px;}
+.stitle em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--accent2);}
+.sdesc{font-size:14px;font-weight:300;color:var(--ink3);line-height:1.75;margin-bottom:32px;max-width:500px;}
 
 /* Fields */
-.fld{margin-bottom:20px;}
+.fld{margin-bottom:18px;}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 @media(max-width:500px){.frow{grid-template-columns:1fr}}
-label{display:block;font-size:9px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--cream3);margin-bottom:7px;}
-label .req{color:var(--gold2);}
-input[type=text],input[type=email],input[type=tel]{
-  width:100%;background:var(--bg2);border:1px solid var(--bg4);border-radius:var(--r);
-  color:var(--cream);font-family:'Outfit',sans-serif;font-size:15px;font-weight:300;
-  padding:13px 16px;outline:none;
-  transition:border-color .25s,box-shadow .25s;-webkit-appearance:none;
+label{display:block;font-size:9px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px;}
+label .req{color:var(--terr);}
+input[type=text],input[type=email],input[type=tel],input[type=password]{
+  width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--r);
+  color:var(--ink);font-family:'Outfit',sans-serif;font-size:15px;font-weight:300;
+  padding:12px 16px;outline:none;transition:border-color .25s,box-shadow .25s;-webkit-appearance:none;
+  box-shadow:var(--shadow);
 }
-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(91,155,213,0.1);}
-input.bad{border-color:rgba(192,64,64,0.6);}
-input::placeholder{color:var(--cream3);opacity:0.6;}
+input:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(45,90,142,0.1);}
+input.bad{border-color:rgba(184,92,56,0.6);}
+input::placeholder{color:var(--ink3);opacity:0.5;}
 
-.err{display:none;font-size:11px;color:#E09090;margin-top:5px;}
-.err.on{display:block;}
+.ferr{display:none;font-size:11px;color:var(--terr);margin-top:5px;}
+.ferr.on{display:block;}
 
-.note-box{
-  display:flex;gap:12px;padding:14px 18px;border-radius:var(--r);
-  margin-bottom:18px;font-size:13.5px;font-weight:300;line-height:1.65;
-}
-.note-gold{background:rgba(91,155,213,0.08);border:1px solid var(--gold-b);color:rgba(224,170,64,0.85);}
-.note-red{background:var(--red-bg);border:1px solid var(--red-b);color:rgba(224,140,140,0.9);}
-.note-box strong{font-weight:500;color:inherit;}
+/* Blocks */
+.icard{padding:18px 20px;margin-bottom:14px;background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow);}
+.icard-top{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.icard p{font-size:13.5px;font-weight:300;color:var(--ink2);line-height:1.7;}
+.icard strong{font-weight:500;color:var(--ink);}
 
-/* Info block */
-.icard{
-  padding:20px 22px;margin-bottom:16px;
-  background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);
-}
-.icard-top{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:10px;opacity:.8;}
-.icard p{font-size:13.5px;font-weight:300;color:var(--cream2);line-height:1.7;}
-.icard p+p{margin-top:6px;}
-.icard strong{font-weight:500;color:var(--cream);}
+.nbox{display:flex;gap:12px;padding:14px 18px;border-radius:var(--r);margin-bottom:16px;font-size:13.5px;font-weight:300;line-height:1.6;}
+.nbox-blue{background:var(--accent-bg);border:1.5px solid var(--accent-b);color:var(--accent);}
+.nbox-red{background:var(--terr-bg);border:1.5px solid var(--terr-b);color:var(--terr);}
+.nbox strong{font-weight:500;}
 
-hr.div{border:none;border-top:1px solid var(--border);margin:28px 0;}
+hr.div{border:none;border-top:1.5px solid var(--bg4);margin:24px 0;}
 
-/* Schedule chips */
-.day-h{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--gold-b);opacity:.8;}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
-.chip{
-  padding:8px 16px;border:1px solid var(--bg4);border-radius:100px;
-  font-size:12px;font-weight:400;color:var(--cream3);background:var(--bg2);
-  cursor:pointer;transition:all .2s;user-select:none;
-}
-.chip:hover{border-color:var(--gold-b);color:var(--cream2);}
-.chip.sel{border-color:var(--gold);background:rgba(91,155,213,0.12);color:var(--gold2);}
+/* Chips */
+.dayh{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;padding-bottom:8px;border-bottom:1.5px solid var(--accent-b);}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px;}
+.chip{padding:8px 16px;border:1.5px solid var(--border);border-radius:100px;font-size:12px;font-weight:400;color:var(--ink3);background:var(--bg2);cursor:pointer;transition:all .2s;user-select:none;box-shadow:var(--shadow);}
+.chip:hover{border-color:var(--accent-b);color:var(--ink);}
+.chip.sel{border-color:var(--accent2);background:var(--accent-bg);color:var(--accent);}
 
 /* Cert */
-.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
-@media(max-width:460px){.cert-grid{grid-template-columns:1fr}}
-.ccard{padding:22px 18px;border:1.5px solid var(--bg4);border-radius:var(--r);cursor:pointer;transition:all .25s;text-align:center;background:var(--bg2);position:relative;}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
+@media(max-width:460px){.cgrid{grid-template-columns:1fr}}
+.ccard{padding:22px 16px;border:1.5px solid var(--border);border-radius:var(--r);cursor:pointer;transition:all .25s;text-align:center;background:var(--bg2);position:relative;box-shadow:var(--shadow);}
 .ccard input[type=radio]{position:absolute;opacity:0;width:0;height:0;}
-.ccard:hover{border-color:var(--gold-b);}
-.ccard.sel{border-color:var(--gold);background:rgba(91,155,213,0.1);}
-.ccard-ico{font-size:1.8rem;margin-bottom:10px;}
-.ccard-name{font-size:14px;font-weight:400;color:var(--cream);}
-.ccard-sub{font-size:11px;font-weight:300;color:var(--cream3);margin-top:4px;}
+.ccard:hover{border-color:var(--accent-b);}
+.ccard.sel{border-color:var(--accent2);background:var(--accent-bg);}
+.ccard-ico{font-size:1.8rem;margin-bottom:8px;}
+.ccard-name{font-size:14px;font-weight:500;color:var(--ink);}
+.ccard-sub{font-size:11px;font-weight:300;color:var(--ink3);margin-top:3px;}
 
 /* Consent */
-.con-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
-.con-row{
-  display:flex;align-items:flex-start;gap:14px;padding:16px 18px;
-  border:1px solid var(--bg4);border-radius:var(--r);cursor:pointer;
-  transition:all .2s;background:var(--bg2);
-}
-.con-row:hover{border-color:var(--gold-b);}
-.con-row.chk{border-color:var(--gold);background:rgba(91,155,213,0.08);}
-.con-row input[type=checkbox]{position:absolute;opacity:0;width:0;height:0;}
-.chkbox{
-  width:20px;height:20px;border-radius:3px;border:1px solid var(--bg4);
-  background:var(--bg);flex-shrink:0;display:flex;align-items:center;justify-content:center;
-  margin-top:2px;transition:all .2s;
-}
-.con-row.chk .chkbox{background:var(--gold);border-color:var(--gold);}
-.chkbox svg{display:none;}
-.con-row.chk .chkbox svg{display:block;}
-.con-txt{font-size:13px;font-weight:300;line-height:1.65;color:var(--cream3);}
-.con-row.chk .con-txt{color:var(--cream2);}
-.con-num{font-size:9px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold2);margin-right:6px;display:block;margin-bottom:2px;}
+.clist{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;}
+.crow{display:flex;align-items:flex-start;gap:14px;padding:15px 18px;border:1.5px solid var(--border);border-radius:var(--r);cursor:pointer;transition:all .2s;background:var(--bg2);box-shadow:var(--shadow);}
+.crow:hover{border-color:var(--accent-b);}
+.crow.chk{border-color:var(--accent2);background:var(--accent-bg);}
+.crow input[type=checkbox]{position:absolute;opacity:0;width:0;height:0;}
+.chk-box{width:20px;height:20px;border-radius:4px;border:1.5px solid var(--bg4);background:var(--bg);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:2px;transition:all .2s;}
+.crow.chk .chk-box{background:var(--accent2);border-color:var(--accent2);}
+.chk-box svg{display:none;}
+.crow.chk .chk-box svg{display:block;}
+.ctxt{font-size:13px;font-weight:300;line-height:1.65;color:var(--ink3);}
+.crow.chk .ctxt{color:var(--ink2);}
+.cnum{font-size:9px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-right:4px;display:block;margin-bottom:2px;}
 
 /* Payment */
-.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
-@media(max-width:460px){.pay-grid{grid-template-columns:1fr}}
-.pcard{position:relative;padding:24px 20px;border:1.5px solid var(--bg4);border-radius:var(--r);cursor:pointer;transition:all .25s;background:var(--bg2);}
-.pcard:hover{border-color:var(--gold-b);}
-.pcard.sel{border-color:var(--gold);background:rgba(91,155,213,0.1);}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
+@media(max-width:460px){.pgrid{grid-template-columns:1fr}}
+.pcard{position:relative;padding:22px 18px;border:1.5px solid var(--border);border-radius:var(--r);cursor:pointer;transition:all .25s;background:var(--bg2);box-shadow:var(--shadow);}
+.pcard:hover{border-color:var(--accent-b);}
+.pcard.sel{border-color:var(--accent2);background:var(--accent-bg);}
 .pcard input[type=radio]{position:absolute;opacity:0;width:0;height:0;}
-.ptag{font-size:9px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--cream3);margin-bottom:10px;}
-.pamt{font-family:'Cormorant',serif;font-size:3rem;font-weight:300;color:var(--gold2);line-height:1;margin-bottom:8px;}
-.pnote{font-size:12px;font-weight:300;color:var(--cream3);line-height:1.6;}
-.pred{color:#E09090;font-weight:400;}
-.pbadge{position:absolute;top:0;right:12px;background:var(--gold);color:#0D1117;font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:3px 10px;border-radius:0 0 4px 4px;}
-.pcard.sel .ptag{color:var(--gold2);}
+.ptag{font-size:9px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;}
+.pamt{font-family:'Cormorant',serif;font-size:3rem;font-weight:300;color:var(--accent);line-height:1;margin-bottom:6px;}
+.pnote{font-size:12px;font-weight:300;color:var(--ink3);line-height:1.6;}
+.pred{color:var(--terr);font-weight:400;}
+.pbadge{position:absolute;top:0;right:12px;background:var(--accent2);color:#fff;font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;border-radius:0 0 6px 6px;}
+.pcard.sel .ptag{color:var(--accent);}
 
-.pp-section{
-  display:none;margin-top:20px;padding:24px;
-  border:1px solid var(--gold-b);background:rgba(91,155,213,0.06);
-  border-radius:var(--r);text-align:center;
-}
-.pp-label{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:18px;opacity:.8;}
+.pp-sec{display:none;margin-top:18px;padding:22px;border:1.5px solid var(--accent-b);background:var(--accent-bg);border-radius:var(--r);text-align:center;}
+.pp-lbl{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
 
 /* Buttons */
-.btn-row{display:flex;gap:12px;margin-top:36px;}
-.btn-back{
-  flex-shrink:0;padding:14px 22px;background:transparent;
-  border:1px solid var(--bg4);border-radius:var(--r);
-  color:var(--cream3);font-family:'Outfit',sans-serif;font-size:12px;font-weight:400;
-  letter-spacing:0.08em;cursor:pointer;transition:all .2s;
-}
-.btn-back:hover{border-color:var(--cream3);color:var(--cream2);}
-.btn-next{
-  flex:1;padding:15px 28px;background:var(--cream);border:none;border-radius:var(--r);
-  color:#0D1117;font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;
-  letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all .25s;
-}
-.btn-next:hover{background:#fff;transform:translateY(-1px);box-shadow:0 10px 28px rgba(0,0,0,0.35);}
+.brow{display:flex;gap:12px;margin-top:32px;}
+.bbk{flex-shrink:0;padding:13px 22px;background:transparent;border:1.5px solid var(--border);border-radius:var(--r);color:var(--ink3);font-family:'Outfit',sans-serif;font-size:12px;font-weight:400;letter-spacing:0.06em;cursor:pointer;transition:all .2s;}
+.bbk:hover{border-color:var(--ink3);color:var(--ink);}
+.bnx{flex:1;padding:14px 28px;background:var(--accent);border:none;border-radius:var(--r);color:#fff;font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all .25s;}
+.bnx:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(45,90,142,0.25);}
 
 /* Success */
-.suc-screen{display:none;max-width:580px;margin:0 auto;padding:100px 28px 120px;text-align:center;animation:fadeUp .6s ease both;}
-.suc-screen.on{display:block;}
-.suc-ico{
-  width:80px;height:80px;border-radius:50%;border:1px solid rgba(58,138,88,0.4);
-  background:rgba(58,138,88,0.1);display:flex;align-items:center;justify-content:center;
-  font-size:2rem;margin:0 auto 32px;
-  animation:popIn .5s .2s cubic-bezier(0.34,1.56,0.64,1) both;
-}
-@keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
-.suc-title{font-family:'Cormorant',serif;font-size:clamp(3rem,6vw,5rem);font-weight:300;line-height:1;color:var(--cream);margin-bottom:16px;}
-.suc-title em{font-style:italic;color:var(--gold2);}
-.suc-msg{font-size:15px;font-weight:300;color:var(--cream3);line-height:1.75;max-width:440px;margin:0 auto 40px;}
-.suc-steps{display:flex;flex-direction:column;gap:12px;text-align:left;border:1px solid var(--border);border-radius:var(--r);padding:24px;background:var(--bg2);}
-.suc-row{display:flex;gap:14px;font-size:13px;font-weight:300;color:var(--cream3);line-height:1.6;}
-.suc-n{width:22px;height:22px;border-radius:50%;background:rgba(91,155,213,0.1);border:1px solid var(--gold-b);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:var(--gold2);flex-shrink:0;}
-.suc-row strong{font-weight:500;color:var(--cream2);}
+.suc{display:none;max-width:560px;margin:0 auto;padding:80px 28px 100px;text-align:center;animation:up .6s ease both;}
+.suc.on{display:block;}
+.suc-ico{width:76px;height:76px;border-radius:50%;border:1.5px solid rgba(45,125,82,0.35);background:rgba(45,125,82,0.08);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 28px;animation:pop .5s .2s cubic-bezier(.34,1.56,.64,1) both;}
+@keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.suc-title{font-family:'Cormorant',serif;font-size:clamp(2.8rem,6vw,4.5rem);font-weight:300;line-height:1;color:var(--ink);margin-bottom:14px;}
+.suc-title em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--accent2);}
+.suc-msg{font-size:15px;font-weight:300;color:var(--ink3);line-height:1.75;max-width:420px;margin:0 auto 36px;}
+.suc-steps{display:flex;flex-direction:column;gap:12px;text-align:left;border:1.5px solid var(--border);border-radius:var(--r);padding:22px;background:var(--bg2);box-shadow:var(--shadow);}
+.srow{display:flex;gap:14px;font-size:13px;font-weight:300;color:var(--ink3);line-height:1.6;}
+.sn2{width:22px;height:22px;border-radius:50%;background:var(--accent-bg);border:1.5px solid var(--accent-b);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:var(--accent);flex-shrink:0;}
+.srow strong{font-weight:500;color:var(--ink2);}
 
-footer{text-align:center;padding:28px;font-size:10px;font-weight:400;letter-spacing:0.12em;color:var(--cream3);border-top:1px solid var(--border);}
-footer span{color:var(--gold2);}
+footer{text-align:center;padding:24px;font-size:10px;font-weight:400;letter-spacing:0.1em;color:var(--ink3);border-top:1.5px solid var(--border);}
+footer span{color:var(--accent2);}
+
+/* ═══════ ADMIN PANEL ═══════ */
+.admin-wrap{display:none;background:var(--bg);min-height:100vh;padding:60px 0 100px;}
+.admin-wrap.on{display:block;}
+.admin-inner{max-width:960px;margin:0 auto;padding:0 28px;}
+.admin-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px;}
+.admin-title{font-family:'Cormorant',serif;font-size:3rem;font-weight:300;color:var(--ink);}
+.admin-title em{font-style:italic;color:var(--accent2);}
+.admin-count{padding:8px 18px;background:var(--accent-bg);border:1.5px solid var(--accent-b);border-radius:100px;font-size:12px;font-weight:600;color:var(--accent);}
+.admin-empty{text-align:center;padding:60px;color:var(--ink3);font-size:15px;font-weight:300;}
+.reg-table{width:100%;border-collapse:collapse;background:var(--bg2);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);border:1.5px solid var(--border);}
+.reg-table th{background:var(--ink);color:#F7F4EF;font-size:9px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;padding:14px 16px;text-align:left;}
+.reg-table td{padding:14px 16px;font-size:13px;font-weight:300;color:var(--ink2);border-bottom:1px solid var(--border);vertical-align:top;}
+.reg-table tr:last-child td{border-bottom:none;}
+.reg-table tr:hover td{background:var(--bg);}
+.rtag{display:inline-block;padding:3px 10px;border-radius:100px;font-size:10px;font-weight:600;}
+.rtag-full{background:rgba(45,90,142,0.1);color:var(--accent);border:1px solid var(--accent-b);}
+.rtag-dep{background:rgba(184,92,56,0.1);color:var(--terr);border:1px solid var(--terr-b);}
+.btn-logout{padding:10px 22px;background:transparent;border:1.5px solid var(--border);border-radius:var(--r);color:var(--ink3);font-family:'Outfit',sans-serif;font-size:12px;cursor:pointer;transition:all .2s;}
+.btn-logout:hover{border-color:var(--terr);color:var(--terr);}
+.btn-clear{padding:10px 22px;background:var(--terr-bg);border:1.5px solid var(--terr-b);border-radius:var(--r);color:var(--terr);font-family:'Outfit',sans-serif;font-size:12px;cursor:pointer;transition:all .2s;margin-left:8px;}
+.btn-clear:hover{background:var(--terr);color:#fff;}
+
+/* Admin Login */
+.admin-login{max-width:380px;margin:120px auto 0;text-align:center;padding:0 28px;}
+.al-title{font-family:'Cormorant',serif;font-size:2.8rem;font-weight:300;color:var(--ink);margin-bottom:8px;}
+.al-sub{font-size:13px;font-weight:300;color:var(--ink3);margin-bottom:32px;}
+.al-input{width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--r);color:var(--ink);font-family:'Outfit',sans-serif;font-size:15px;font-weight:300;padding:14px 18px;outline:none;margin-bottom:12px;transition:border-color .25s;box-shadow:var(--shadow);}
+.al-input:focus{border-color:var(--accent2);}
+.al-btn{width:100%;padding:14px;background:var(--accent);border:none;border-radius:var(--r);color:#fff;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;transition:all .25s;}
+.al-btn:hover{background:var(--accent2);}
+.al-err{display:none;margin-top:10px;font-size:12px;color:var(--terr);}
+.al-err.on{display:block;}
 </style>
 </head>
 <body>
 
-<!-- ══ HERO ══════════════════════════ -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-lines"></div>
-  <div class="hero-accent"></div>
+<!-- ══ SITE PUBLIC ══════════════════════════ -->
+<div id="publicSite">
 
-  <div class="hero-top">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
     <div class="hero-left">
-      <div class="htag">Formation professionnelle · Montréal</div>
-      <h1 class="hero-h1">Lettrage &<br><span>Impression</span></h1>
-      <p class="hero-h2">sur Vinyle</p>
+      <div class="h-sup">Formation professionnelle · Montréal</div>
+      <h1 class="h-title">Lettrage &</h1>
+      <p class="h-title-2">Impression sur Vinyle</p>
+      <p class="h-desc">Formation intensive de <strong>2 jours — 6 heures</strong> pour maîtriser le design, la découpe et l'application de vinyle. Tous niveaux acceptés.</p>
     </div>
     <div class="hero-right">
-      <div class="hinfo-row">
-        <span class="hinfo-label">Durée</span>
-        <span class="hinfo-val"><strong>2 jours</strong> — 6 heures de pratique</span>
-      </div>
-      <div class="hinfo-row">
-        <span class="hinfo-label">Compétences</span>
-        <span class="hinfo-val">Design · Découpe · Application</span>
-      </div>
-      <div class="hinfo-row">
-        <span class="hinfo-label">Matériel</span>
-        <span class="hinfo-val">Fourni gratuitement sur place</span>
-      </div>
-      <div class="hinfo-row">
-        <span class="hinfo-label">Lieu</span>
-        <span class="hinfo-val">8552 Boul. Pie-IX, Montréal</span>
-      </div>
-      <div class="urgency">
-        <div class="urgency-dot"></div>
-        Inscriptions closes le <strong>&nbsp;05 juin 2026</strong>
-      </div>
+      <div class="hinfo"><div class="hinfo-lbl">Durée</div><div class="hinfo-val"><strong>6 heures</strong> de pratique intensive</div></div>
+      <div class="hinfo"><div class="hinfo-lbl">Matériel</div><div class="hinfo-val">Fourni gratuitement sur place</div></div>
+      <div class="hinfo"><div class="hinfo-lbl">Certificat</div><div class="hinfo-val">De participation inclus</div></div>
+      <div class="hinfo"><div class="hinfo-lbl">Lieu</div><div class="hinfo-val">8552 Boul. Pie-IX, Montréal</div></div>
+      <div class="urgency"><div class="u-dot"></div>Inscriptions closes le <strong>&nbsp;05 juin 2026</strong></div>
     </div>
   </div>
-
-  <div class="hero-bottom">
-    <div class="dates-row">
-      <div class="dcard"><div class="dcard-n">19</div><div class="dcard-l">Vendredi · Juin 2026</div></div>
-      <div class="dcard"><div class="dcard-n">20</div><div class="dcard-l">Samedi · Juin 2026</div></div>
+  <div class="hero-foot">
+    <div class="dates">
+      <div class="dcard"><div class="dcard-n">19</div><div class="dcard-l">Vendredi · Juin</div></div>
+      <div class="dcard"><div class="dcard-n">20</div><div class="dcard-l">Samedi · Juin</div></div>
     </div>
-    <a class="cta-btn" href="#form">
-      S'inscrire maintenant
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
+    <a class="cta" href="#form">S'inscrire maintenant <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
 </section>
 
-<!-- ══ FORM ═══════════════════════════ -->
-<div id="form">
+<!-- FORM -->
+<div class="form-area" id="form">
 <div class="form-wrap">
   <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:16.6%"></div></div>
-
-  <nav class="step-nav">
+  <nav class="snav">
     <div class="sn active"><div class="sn-c">1</div><span class="sn-l">Profil</span></div>
     <div class="sn"><div class="sn-c">2</div><span class="sn-l">Logistique</span></div>
     <div class="sn"><div class="sn-c">3</div><span class="sn-l">Horaires</span></div>
@@ -400,76 +337,37 @@ footer span{color:var(--gold2);}
 
   <!-- STEP 1 -->
   <div class="fstep active" id="step-1">
-    <p class="step-eye">Étape 01 / 06</p>
-    <h2 class="step-title">Vos informations<br><em>personnelles</em></h2>
-    <p class="step-desc">Ces données servent à votre suivi WhatsApp et à l'organisation de la formation.</p>
-
+    <p class="seye">Étape 01 / 06</p>
+    <h2 class="stitle">Vos informations<br><em>personnelles</em></h2>
+    <p class="sdesc">Ces données servent à votre suivi WhatsApp et à l'organisation de la formation.</p>
     <div class="frow">
-      <div class="fld">
-        <label>Nom <span class="req">*</span></label>
-        <input type="text" id="lastName" placeholder="Votre nom">
-        <p class="err" id="errLN">Ce champ est obligatoire.</p>
-      </div>
-      <div class="fld">
-        <label>Prénom <span class="req">*</span></label>
-        <input type="text" id="firstName" placeholder="Votre prénom">
-        <p class="err" id="errFN">Ce champ est obligatoire.</p>
-      </div>
+      <div class="fld"><label>Nom <span class="req">*</span></label><input type="text" id="lastName" placeholder="Votre nom"><p class="ferr" id="errLN">Ce champ est obligatoire.</p></div>
+      <div class="fld"><label>Prénom <span class="req">*</span></label><input type="text" id="firstName" placeholder="Votre prénom"><p class="ferr" id="errFN">Ce champ est obligatoire.</p></div>
     </div>
-    <div class="fld">
-      <label>Adresse e-mail <span class="req">*</span></label>
-      <input type="email" id="email" placeholder="votre@email.com">
-      <p class="err" id="errEM">Veuillez entrer un e-mail valide.</p>
-    </div>
-    <div class="note-box note-gold">
-      <span>📧</span>
-      <span>L'horaire pré-sélectionné vous sera communiqué par e-mail <strong>le 29 mai</strong>. Vérifiez que votre adresse est correcte.</span>
-    </div>
-    <div class="fld">
-      <label>Numéro de téléphone <span class="req">*</span></label>
-      <input type="tel" id="phone" placeholder="+1 (514) 000-0000">
-      <p class="err" id="errPH">Ce champ est obligatoire.</p>
-    </div>
-    <div class="note-box note-gold">
-      <span>💬</span>
-      <span>Votre numéro sera utilisé pour les rappels <strong>WhatsApp</strong> avant et pendant la formation.</span>
-    </div>
-    <div class="btn-row">
-      <button class="btn-next" onclick="nextStep(1)">Continuer →</button>
-    </div>
+    <div class="fld"><label>Adresse e-mail <span class="req">*</span></label><input type="email" id="email" placeholder="votre@email.com"><p class="ferr" id="errEM">Veuillez entrer un e-mail valide.</p></div>
+    <div class="nbox nbox-blue"><span>📧</span><span>L'horaire pré-sélectionné vous sera communiqué par e-mail <strong>le 29 mai</strong>.</span></div>
+    <div class="fld"><label>Numéro de téléphone <span class="req">*</span></label><input type="tel" id="phone" placeholder="+1 (514) 000-0000"><p class="ferr" id="errPH">Ce champ est obligatoire.</p></div>
+    <div class="nbox nbox-blue"><span>💬</span><span>Votre numéro sera utilisé pour les rappels <strong>WhatsApp</strong>.</span></div>
+    <div class="brow"><button class="bnx" onclick="nextStep(1)">Continuer →</button></div>
   </div>
 
   <!-- STEP 2 -->
   <div class="fstep" id="step-2">
-    <p class="step-eye">Étape 02 / 06</p>
-    <h2 class="step-title">Matériel &<br><em>Tenue</em></h2>
-    <p class="step-desc">Tout ce que vous devez savoir avant le jour J.</p>
-
-    <div class="icard">
-      <p class="icard-top">🎁 Matériel fourni gratuitement</p>
-      <p>Tous les matériaux nécessaires sont <strong>fournis gratuitement</strong> sur place : vitres · vinyles · outils de découpe et d'application.</p>
-    </div>
-    <div class="icard">
-      <p class="icard-top">👕 Tenue de pratique</p>
-      <p>Un <strong>maillot de pratique</strong> est fourni sur place. Portez simplement une tenue confortable.</p>
-    </div>
-    <div class="note-box note-red">
-      <span>⚠️</span>
-      <div><strong>Obligatoire — Ordinateur portable ou tablette</strong><br>Vous devez apporter votre propre appareil pour la partie design. Sans lui, participation partielle seulement.</div>
-    </div>
-    <div class="btn-row">
-      <button class="btn-back" onclick="prevStep(2)">← Retour</button>
-      <button class="btn-next" onclick="nextStep(2)">Continuer →</button>
-    </div>
+    <p class="seye">Étape 02 / 06</p>
+    <h2 class="stitle">Matériel &<br><em>Tenue</em></h2>
+    <p class="sdesc">Tout ce que vous devez savoir avant le jour J.</p>
+    <div class="icard"><p class="icard-top">🎁 Matériel fourni gratuitement</p><p>Tous les matériaux nécessaires sont <strong>fournis gratuitement</strong> sur place : vitres · vinyles · outils de découpe et d'application.</p></div>
+    <div class="icard"><p class="icard-top">👕 Tenue de pratique</p><p>Un <strong>maillot de pratique</strong> est fourni sur place. Portez simplement une tenue confortable.</p></div>
+    <div class="nbox nbox-red"><span>⚠️</span><div><strong>Obligatoire — Ordinateur portable ou tablette</strong><br>Vous devez apporter votre propre appareil pour la partie design.</div></div>
+    <div class="brow"><button class="bbk" onclick="prevStep(2)">← Retour</button><button class="bnx" onclick="nextStep(2)">Continuer →</button></div>
   </div>
 
   <!-- STEP 3 -->
   <div class="fstep" id="step-3">
-    <p class="step-eye">Étape 03 / 06</p>
-    <h2 class="step-title">Vos<br><em>disponibilités</em></h2>
-    <p class="step-desc">Indiquez vos préférences. L'horaire pré-sélectionné n'est pas garanti et vous sera communiqué par courriel le <strong>24 mai</strong>.</p>
-
-    <div class="day-h">📅 Vendredi 19 juin — 16h30 à 22h</div>
+    <p class="seye">Étape 03 / 06</p>
+    <h2 class="stitle">Vos<br><em>disponibilités</em></h2>
+    <p class="sdesc">Indiquez vos préférences. L'horaire pré-sélectionné n'est pas garanti et vous sera communiqué par courriel le <strong>29 mai</strong>.</p>
+    <div class="dayh">📅 Vendredi 19 juin — 16h30 à 22h</div>
     <div class="chips" id="fri">
       <div class="chip" onclick="this.classList.toggle('sel')">16h30 – 18h30</div>
       <div class="chip" onclick="this.classList.toggle('sel')">17h00 – 19h00</div>
@@ -478,7 +376,7 @@ footer span{color:var(--gold2);}
       <div class="chip" onclick="this.classList.toggle('sel')">20h00 – 22h00</div>
     </div>
     <hr class="div">
-    <div class="day-h">📅 Samedi 20 juin — 8h à 17h</div>
+    <div class="dayh">📅 Samedi 20 juin — 8h à 17h</div>
     <div class="chips" id="sat">
       <div class="chip" onclick="this.classList.toggle('sel')">8h00 – 10h00</div>
       <div class="chip" onclick="this.classList.toggle('sel')">9h00 – 11h00</div>
@@ -487,152 +385,186 @@ footer span{color:var(--gold2);}
       <div class="chip" onclick="this.classList.toggle('sel')">14h00 – 16h00</div>
       <div class="chip" onclick="this.classList.toggle('sel')">15h00 – 17h00</div>
     </div>
-    <div class="btn-row">
-      <button class="btn-back" onclick="prevStep(3)">← Retour</button>
-      <button class="btn-next" onclick="nextStep(3)">Continuer →</button>
-    </div>
+    <div class="brow"><button class="bbk" onclick="prevStep(3)">← Retour</button><button class="bnx" onclick="nextStep(3)">Continuer →</button></div>
   </div>
 
   <!-- STEP 4 -->
   <div class="fstep" id="step-4">
-    <p class="step-eye">Étape 04 / 06</p>
-    <h2 class="step-title">Votre<br><em>certificat</em></h2>
-    <p class="step-desc">Comment souhaitez-vous recevoir votre certificat de participation ?</p>
-
-    <div class="cert-grid">
-      <div class="ccard" id="c1" onclick="selCert('c1')">
-        <input type="radio" name="cert" value="digital">
-        <div class="ccard-ico">📧</div>
-        <div class="ccard-name">Format Digital</div>
-        <div class="ccard-sub">Envoyé par e-mail</div>
-      </div>
-      <div class="ccard" id="c2" onclick="selCert('c2')">
-        <input type="radio" name="cert" value="physical">
-        <div class="ccard-ico">🏅</div>
-        <div class="ccard-name">Format Physique</div>
-        <div class="ccard-sub">Remis à la fin du programme</div>
-      </div>
+    <p class="seye">Étape 04 / 06</p>
+    <h2 class="stitle">Votre<br><em>certificat</em></h2>
+    <p class="sdesc">Comment souhaitez-vous recevoir votre certificat de participation ?</p>
+    <div class="cgrid">
+      <div class="ccard" id="c1" onclick="selCert('c1')"><input type="radio" name="cert" value="digital"><div class="ccard-ico">📧</div><div class="ccard-name">Format Digital</div><div class="ccard-sub">Envoyé par e-mail</div></div>
+      <div class="ccard" id="c2" onclick="selCert('c2')"><input type="radio" name="cert" value="physical"><div class="ccard-ico">🏅</div><div class="ccard-name">Format Physique</div><div class="ccard-sub">Remis à la fin du programme</div></div>
     </div>
-    <p class="err" id="errCert">Veuillez choisir un format de certificat.</p>
-
-    <div class="btn-row">
-      <button class="btn-back" onclick="prevStep(4)">← Retour</button>
-      <button class="btn-next" onclick="nextStep(4)">Continuer →</button>
-    </div>
+    <p class="ferr" id="errCert">Veuillez choisir un format de certificat.</p>
+    <div class="brow"><button class="bbk" onclick="prevStep(4)">← Retour</button><button class="bnx" onclick="nextStep(4)">Continuer →</button></div>
   </div>
 
   <!-- STEP 5 -->
   <div class="fstep" id="step-5">
-    <p class="step-eye">Étape 05 / 06</p>
-    <h2 class="step-title">Consentements &<br><em>mentions légales</em></h2>
-    <p class="step-desc">Lisez attentivement et cochez les trois points pour continuer.</p>
-
-    <div class="con-list">
-      <div class="con-row" id="con1" onclick="togCon('con1')">
-        <input type="checkbox">
-        <div class="chkbox"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0D1117" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div>
-        <p class="con-txt"><span class="con-num">1 · Exactitude</span>Je certifie que toutes les informations fournies dans ce formulaire sont vraies et exactes.</p>
-      </div>
-      <div class="con-row" id="con2" onclick="togCon('con2')">
-        <input type="checkbox">
-        <div class="chkbox"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0D1117" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div>
-        <p class="con-txt"><span class="con-num">2 · Droit à l'image</span>J'accepte d'être filmé(e) et photographié(e) durant toutes les séances. J'autorise l'utilisation de ces médias pour les pages de l'entreprise et les promotions futures.</p>
-      </div>
-      <div class="con-row" id="con3" onclick="togCon('con3')">
-        <input type="checkbox">
-        <div class="chkbox"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0D1117" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div>
-        <p class="con-txt"><span class="con-num">3 · Matériel personnel</span>Je confirme avoir compris que je dois apporter mon propre ordinateur portable ou tablette pour la partie design.</p>
-      </div>
+    <p class="seye">Étape 05 / 06</p>
+    <h2 class="stitle">Consentements &<br><em>mentions légales</em></h2>
+    <p class="sdesc">Lisez attentivement et cochez les trois points pour continuer.</p>
+    <div class="clist">
+      <div class="crow" id="con1" onclick="togCon('con1')"><input type="checkbox"><div class="chk-box"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div><p class="ctxt"><span class="cnum">1 · Exactitude</span>Je certifie que toutes les informations fournies sont vraies et exactes.</p></div>
+      <div class="crow" id="con2" onclick="togCon('con2')"><input type="checkbox"><div class="chk-box"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div><p class="ctxt"><span class="cnum">2 · Droit à l'image</span>J'accepte d'être filmé(e) et photographié(e) durant toutes les séances. J'autorise l'utilisation de ces médias pour les pages de l'entreprise et les promotions futures.</p></div>
+      <div class="crow" id="con3" onclick="togCon('con3')"><input type="checkbox"><div class="chk-box"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="m5 12 5 5L20 7"/></svg></div><p class="ctxt"><span class="cnum">3 · Matériel personnel</span>Je confirme avoir compris que je dois apporter mon propre ordinateur portable ou tablette pour la partie design.</p></div>
     </div>
-    <p class="err" id="errCon">Vous devez cocher les trois cases pour continuer.</p>
-
-    <div class="btn-row">
-      <button class="btn-back" onclick="prevStep(5)">← Retour</button>
-      <button class="btn-next" onclick="nextStep(5)">Continuer →</button>
-    </div>
+    <p class="ferr" id="errCon">Vous devez cocher les trois cases pour continuer.</p>
+    <div class="brow"><button class="bbk" onclick="prevStep(5)">← Retour</button><button class="bnx" onclick="nextStep(5)">Continuer →</button></div>
   </div>
 
-  <!-- STEP 6 : PAIEMENT — DERNIER -->
+  <!-- STEP 6 : PAIEMENT -->
   <div class="fstep" id="step-6">
-    <p class="step-eye">Étape 06 / 06 — Dernière étape</p>
-    <h2 class="step-title">Finalisez votre<br><em>inscription</em></h2>
-    <p class="step-desc">Choisissez votre option et procédez au paiement. <strong>Le paiement confirme automatiquement votre place</strong> — aucune étape supplémentaire requise.</p>
-
-    <div class="pay-grid">
-      <div class="pcard" id="pay1" onclick="selPay('pay1')">
-        <input type="radio" name="payment" value="deposit">
-        <div class="ptag">Option 1 — Dépôt</div>
-        <div class="pamt">108 $</div>
-        <div class="pnote">30 % du total.<br><span class="pred">Non remboursable à partir du 30 mai.</span></div>
-      </div>
-      <div class="pcard" id="pay2" onclick="selPay('pay2')">
-        <div class="pbadge">Recommandé</div>
-        <input type="radio" name="payment" value="full">
-        <div class="ptag">Option 2 — Complet</div>
-        <div class="pamt">360 $</div>
-        <div class="pnote">Paiement unique.<br>Place confirmée immédiatement.</div>
-      </div>
+    <p class="seye">Étape 06 / 06 — Dernière étape</p>
+    <h2 class="stitle">Finalisez votre<br><em>inscription</em></h2>
+    <p class="sdesc">Choisissez votre option et procédez au paiement. <strong>Le paiement confirme automatiquement votre place.</strong></p>
+    <div class="pgrid">
+      <div class="pcard" id="pay1" onclick="selPay('pay1')"><input type="radio" name="payment" value="deposit"><div class="ptag">Option 1 — Dépôt</div><div class="pamt">108 $</div><div class="pnote">30 % du total.<br><span class="pred">Non remboursable à partir du 30 mai.</span></div></div>
+      <div class="pcard" id="pay2" onclick="selPay('pay2')"><div class="pbadge">Recommandé</div><input type="radio" name="payment" value="full"><div class="ptag">Option 2 — Complet</div><div class="pamt">360 $</div><div class="pnote">Paiement unique.<br>Place confirmée immédiatement.</div></div>
     </div>
-    <p class="err" id="errPay">Veuillez sélectionner une option de paiement.</p>
-
-    <div class="note-box note-red">
-      <span>⚠️</span>
-      <span>Le dépôt de 30 % (108 $) est <strong>non remboursable à partir du 30 mai 2026</strong>.</span>
+    <p class="ferr" id="errPay">Veuillez sélectionner une option de paiement.</p>
+    <div class="nbox nbox-red"><span>⚠️</span><span>Le dépôt (108 $) est <strong>non remboursable à partir du 30 mai 2026</strong>.</span></div>
+    <div class="pp-sec" id="ppSec">
+      <p class="pp-lbl">💳 Payez directement ici — votre place est confirmée dès le paiement</p>
+      <div id="pp-btn"></div>
+      <p style="font-size:11px;font-weight:300;color:var(--ink3);margin-top:12px;">Paiement sécurisé · Carte bancaire acceptée</p>
     </div>
-
-    <div class="pp-section" id="ppSection">
-      <p class="pp-label">💳 Payez directement ici — votre place est confirmée dès le paiement</p>
-      <div id="paypal-btn-container"></div>
-      <p style="font-size:11px;font-weight:300;color:var(--cream3);margin-top:14px;text-align:center;">Paiement sécurisé · Carte bancaire acceptée</p>
-    </div>
-    <div style="display:none" id="pp360">
-        <style>.ppA{text-align:center;border:none;border-radius:4px;min-width:180px;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;cursor:pointer;}</style>
-        <form action="https://www.paypal.com/ncp/payment/XNLQSQQPF6Q5A" method="post" target="_blank" style="display:inline-grid;justify-items:center;gap:.5rem;" onsubmit="onPay()">
-          <input class="ppA" type="submit" value="Payer 360 $ CAD"/>
-          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards"/>
-          <section style="font-size:.75rem;">Optimisé par <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:.875rem;vertical-align:middle;"/></section>
-        </form>
-      </div>
-      <div id="pp108" style="display:none">
-        <style>.ppB{text-align:center;border:none;border-radius:4px;min-width:180px;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;cursor:pointer;}</style>
-        <form action="https://www.paypal.com/ncp/payment/2J4YSD8T7Z9KG" method="post" target="_blank" style="display:inline-grid;justify-items:center;gap:.5rem;" onsubmit="onPay()">
-          <input class="ppB" type="submit" value="Payer 108 $ CAD"/>
-          <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards"/>
-          <section style="font-size:.75rem;">Optimisé par <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:.875rem;vertical-align:middle;"/></section>
-        </form>
-      </div>
-    </div>
-
-    <div class="btn-row">
-      <button class="btn-back" onclick="prevStep(6)">← Retour</button>
-    </div>
+    <div class="brow"><button class="bbk" onclick="prevStep(6)">← Retour</button></div>
   </div>
 
-</div>
-</div>
+</div><!-- /form-wrap -->
+</div><!-- /form-area -->
 
-<!-- ══ SUCCESS ════════════════════════ -->
-<div class="suc-screen" id="sucScreen">
+<!-- SUCCESS -->
+<div class="suc" id="sucScreen">
   <div class="suc-ico">🎉</div>
   <h2 class="suc-title">Félicitations !<br><em>Place réservée.</em></h2>
   <p class="suc-msg">Votre paiement a été traité et votre inscription est confirmée. Nous sommes ravis de vous accueillir !</p>
   <div class="suc-steps">
-    <div class="suc-row"><div class="suc-n">1</div><span>Un message de <strong>confirmation</strong> vous est envoyé immédiatement.</span></div>
-    <div class="suc-row"><div class="suc-n">2</div><span>Le <strong>29 mai</strong>, vous recevrez l'horaire exact par e-mail.</span></div>
-    <div class="suc-row"><div class="suc-n">3</div><span>Une semaine avant, un rappel avec l'adresse : <strong>8552 Boulevard Pie-IX, Montréal</strong>.</span></div>
-    <div class="suc-row"><div class="suc-n">4</div><span>Les <strong>19 et 20 juin 2026</strong> — À vous de briller !</span></div>
+    <div class="srow"><div class="sn2">1</div><span>Un message de <strong>confirmation</strong> vous est envoyé immédiatement.</span></div>
+    <div class="srow"><div class="sn2">2</div><span>Le <strong>29 mai</strong>, vous recevrez l'horaire exact par e-mail.</span></div>
+    <div class="srow"><div class="sn2">3</div><span>Une semaine avant, rappel avec l'adresse : <strong>8552 Boulevard Pie-IX, Montréal</strong>.</span></div>
+    <div class="srow"><div class="sn2">4</div><span>Les <strong>19 et 20 juin 2026</strong> — À vous de briller !</span></div>
   </div>
 </div>
 
 <footer>Formation <span>Lettrage & Impression</span> · 8552 Boul. Pie-IX, Montréal · Inscriptions closes le 05 juin 2026</footer>
+</div><!-- /publicSite -->
+
+<!-- ══ ADMIN PANEL ══════════════════════════ -->
+<div class="admin-wrap" id="adminWrap">
+
+  <!-- Login -->
+  <div id="adminLogin" class="admin-login">
+    <h2 class="al-title">Espace <em>Admin</em></h2>
+    <p class="al-sub">Entrez le mot de passe pour accéder aux inscriptions.</p>
+    <input class="al-input" type="password" id="adminPwd" placeholder="Mot de passe" onkeydown="if(event.key==='Enter')checkPwd()">
+    <button class="al-btn" onclick="checkPwd()">Accéder →</button>
+    <p class="al-err" id="pwdErr">Mot de passe incorrect.</p>
+    <p style="margin-top:20px;font-size:11px;color:var(--ink3)"><a href="/" style="color:var(--accent);text-decoration:none;">← Retour au site</a></p>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="adminDash" class="admin-inner" style="display:none">
+    <div class="admin-head">
+      <div>
+        <h2 class="admin-title">Tableau de bord<br><em>Inscriptions</em></h2>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+        <span class="admin-count" id="adminCount">0 inscrits</span>
+        <button class="btn-clear" onclick="clearAll()">🗑 Effacer tout</button>
+        <button class="btn-logout" onclick="logout()">Déconnexion</button>
+      </div>
+    </div>
+    <div id="adminTable"></div>
+  </div>
+
+</div>
 
 <script src="https://www.paypal.com/sdk/js?client-id=BAAlVQeLUpliRYytFOvP6cKdzraygIQT9wMNY0gdFSUwF3LfDFodUjJDTCMlRsRLRY-BL2H4hUILWXBmkw&currency=CAD&components=buttons&disable-funding=venmo,paylater"></script>
 <script>
+// ─── MOT DE PASSE ADMIN (changer ici) ───────────────
+const ADMIN_PWD = 'admin2026';
+// ────────────────────────────────────────────────────
+
 let cur=1;
 const TOTAL=6;
+let selectedAmount='0';
 let ppRendered=false;
-let selectedAmount=0;
 
+// ── Routage Admin ──
+function checkRoute(){
+  if(window.location.hash==='#admin'){
+    document.getElementById('publicSite').style.display='none';
+    document.getElementById('adminWrap').classList.add('on');
+    const logged=sessionStorage.getItem('adminLogged');
+    if(logged==='1') showDash();
+    else document.getElementById('adminLogin').style.display='block';
+  }
+}
+
+function checkPwd(){
+  const v=document.getElementById('adminPwd').value;
+  if(v===ADMIN_PWD){
+    sessionStorage.setItem('adminLogged','1');
+    document.getElementById('pwdErr').classList.remove('on');
+    showDash();
+  } else {
+    document.getElementById('pwdErr').classList.add('on');
+  }
+}
+
+function showDash(){
+  document.getElementById('adminLogin').style.display='none';
+  document.getElementById('adminDash').style.display='block';
+  loadRegistrations();
+}
+
+function logout(){
+  sessionStorage.removeItem('adminLogged');
+  window.location.hash='';
+  location.reload();
+}
+
+function loadRegistrations(){
+  const data=JSON.parse(localStorage.getItem('registrations')||'[]');
+  const count=data.length;
+  document.getElementById('adminCount').textContent=count+' inscrit'+(count!==1?'s':'');
+
+  if(count===0){
+    document.getElementById('adminTable').innerHTML='<div class="admin-empty">Aucune inscription pour le moment.</div>';
+    return;
+  }
+
+  let html='<div style="overflow-x:auto"><table class="reg-table"><thead><tr><th>#</th><th>Nom</th><th>E-mail</th><th>Téléphone</th><th>Paiement</th><th>Certificat</th><th>Vendredi</th><th>Samedi</th><th>Date</th></tr></thead><tbody>';
+  data.forEach((r,i)=>{
+    const tag=r.paiement&&r.paiement.includes('360')?'<span class="rtag rtag-full">360 $</span>':'<span class="rtag rtag-dep">108 $</span>';
+    html+=`<tr>
+      <td style="color:var(--ink3);font-size:11px">${i+1}</td>
+      <td><strong>${r.prenom||''} ${r.nom||''}</strong></td>
+      <td>${r.email||''}</td>
+      <td>${r.telephone||''}</td>
+      <td>${tag}</td>
+      <td>${r.certificat||''}</td>
+      <td style="font-size:12px">${r.vendredi||'—'}</td>
+      <td style="font-size:12px">${r.samedi||'—'}</td>
+      <td style="font-size:11px;color:var(--ink3)">${r.date||''}</td>
+    </tr>`;
+  });
+  html+='</tbody></table></div>';
+  document.getElementById('adminTable').innerHTML=html;
+}
+
+function clearAll(){
+  if(confirm('Effacer toutes les inscriptions ?')){
+    localStorage.removeItem('registrations');
+    loadRegistrations();
+  }
+}
+
+// ── Navigation Form ──
 function upNav(n){
   document.querySelectorAll('.sn').forEach((el,i)=>{
     el.classList.remove('active','done');
@@ -659,23 +591,19 @@ function valid(s){
     const ln=document.getElementById('lastName'),fn=document.getElementById('firstName'),
           em=document.getElementById('email'),ph=document.getElementById('phone');
     [ln,fn,em,ph].forEach(f=>f.classList.remove('bad'));
-    document.querySelectorAll('.err').forEach(e=>e.classList.remove('on'));
+    document.querySelectorAll('.ferr').forEach(e=>e.classList.remove('on'));
     if(!ln.value.trim()){ln.classList.add('bad');document.getElementById('errLN').classList.add('on');ok=false;}
     if(!fn.value.trim()){fn.classList.add('bad');document.getElementById('errFN').classList.add('on');ok=false;}
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim())){em.classList.add('bad');document.getElementById('errEM').classList.add('on');ok=false;}
     if(!ph.value.trim()){ph.classList.add('bad');document.getElementById('errPH').classList.add('on');ok=false;}
   }
-  if(s===4){
-    const sel=document.querySelector('input[name=cert]:checked');
-    const err=document.getElementById('errCert');
-    if(!sel){err.classList.add('on');ok=false;}else err.classList.remove('on');
-  }
+  if(s===4){const sel=document.querySelector('input[name=cert]:checked');const err=document.getElementById('errCert');if(!sel){err.classList.add('on');ok=false;}else err.classList.remove('on');}
   if(s===5){
-    const ok1=document.getElementById('con1').classList.contains('chk'),
-          ok2=document.getElementById('con2').classList.contains('chk'),
-          ok3=document.getElementById('con3').classList.contains('chk');
+    const a=document.getElementById('con1').classList.contains('chk'),
+          b=document.getElementById('con2').classList.contains('chk'),
+          c=document.getElementById('con3').classList.contains('chk');
     const err=document.getElementById('errCon');
-    if(!ok1||!ok2||!ok3){err.classList.add('on');ok=false;}else err.classList.remove('on');
+    if(!a||!b||!c){err.classList.add('on');ok=false;}else err.classList.remove('on');
   }
   return ok;
 }
@@ -685,51 +613,26 @@ function selPay(id){
   document.getElementById(id).classList.add('sel');
   document.querySelector('#'+id+' input[type=radio]').checked=true;
   document.getElementById('errPay').classList.remove('on');
-
-  selectedAmount = (id==='pay2') ? '360.00' : '108.00';
-
-  // Vide le container et re-rend les boutons PayPal avec le bon montant
-  const container = document.getElementById('paypal-btn-container');
-  container.innerHTML = '';
-  ppRendered = false;
-
-  document.getElementById('ppSection').style.display='block';
-  renderPayPal();
+  selectedAmount=(id==='pay2')?'360.00':'108.00';
+  document.getElementById('pp-btn').innerHTML='';
+  ppRendered=false;
+  document.getElementById('ppSec').style.display='block';
+  renderPP();
 }
 
-function renderPayPal(){
-  if(ppRendered) return;
-  ppRendered = true;
-
+function renderPP(){
+  if(ppRendered)return;
+  ppRendered=true;
   paypal.Buttons({
-    style:{
-      layout:'vertical',
-      color:'gold',
-      shape:'rect',
-      label:'pay',
-      height:45
+    style:{layout:'vertical',color:'gold',shape:'rect',label:'pay',height:44},
+    createOrder:function(d,a){
+      return a.order.create({purchase_units:[{description:'Formation Lettrage & Impression 2026',amount:{currency_code:'CAD',value:selectedAmount}}]});
     },
-    createOrder: function(data, actions){
-      return actions.order.create({
-        purchase_units:[{
-          description: 'Formation Lettrage & Impression 2026',
-          amount:{
-            currency_code:'CAD',
-            value: selectedAmount
-          }
-        }]
-      });
+    onApprove:function(d,a){
+      return a.order.capture().then(function(details){onPayConfirmed(details);});
     },
-    onApprove: function(data, actions){
-      return actions.order.capture().then(function(details){
-        // Peman konfime — voye notifikasyon epi montre ekran siksè
-        onPayConfirmed(details);
-      });
-    },
-    onError: function(err){
-      console.error('PayPal error:', err);
-    }
-  }).render('#paypal-btn-container');
+    onError:function(e){console.error(e);}
+  }).render('#pp-btn');
 }
 
 function selCert(id){
@@ -740,10 +643,8 @@ function selCert(id){
 }
 
 function togCon(id){
-  const el=document.getElementById(id);
-  el.classList.toggle('chk');
-  const cb=el.querySelector('input[type=checkbox]');
-  if(cb)cb.checked=el.classList.contains('chk');
+  const el=document.getElementById(id);el.classList.toggle('chk');
+  const cb=el.querySelector('input[type=checkbox]');if(cb)cb.checked=el.classList.contains('chk');
   if(el.classList.contains('chk'))document.getElementById('errCon').classList.remove('on');
 }
 
@@ -758,17 +659,26 @@ function onPayConfirmed(details){
   const cert=certEl?(certEl.value==='digital'?'Digital (email)':'Physique'):'N/A';
   const vendredi=[...document.querySelectorAll('#fri .chip.sel')].map(c=>c.textContent).join(', ')||'Aucune';
   const samedi=[...document.querySelectorAll('#sat .chip.sel')].map(c=>c.textContent).join(', ')||'Aucune';
+  const now=new Date().toLocaleDateString('fr-CA',{year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
 
-  // Voye email notifikasyon SÈLMAN apre peman konfime
-  emailjs.send('service_96tgvv1','template_9aqtrt6',{
-    nom,prenom,email,telephone:tel,paiement:payment,certificat:cert,vendredi,samedi
-  }).catch(()=>{});
+  // Sove nan localStorage pou panel admin
+  const record={nom,prenom,email,telephone:tel,paiement:payment,certificat:cert,vendredi,samedi,date:now};
+  const existing=JSON.parse(localStorage.getItem('registrations')||'[]');
+  existing.push(record);
+  localStorage.setItem('registrations',JSON.stringify(existing));
+
+  // Voye email notifikasyon
+  emailjs.send('service_96tgvv1','template_9aqtrt6',{nom,prenom,email,telephone:tel,paiement:payment,certificat:cert,vendredi,samedi}).catch(()=>{});
 
   // Montre ekran siksè
   document.getElementById('form').style.display='none';
   document.getElementById('sucScreen').classList.add('on');
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
+// Init
+checkRoute();
+window.addEventListener('hashchange',checkRoute);
 </script>
 </body>
 </html>
