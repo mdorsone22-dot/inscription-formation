@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Formation Lettrage & Impression — Inscription 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@200;300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Outfit:wght@200;300;400;500;600;700&family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>emailjs.init('kMKh2aanXxHg6Ollc');</script>
 <style>
@@ -38,89 +38,222 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);overf
 .hero{
   position:relative;min-height:100vh;
   display:flex;flex-direction:column;overflow:hidden;
-  background:var(--ink);
+  background:#0A0806;
 }
-.hero-texture{
+.hero-bg{
   position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 80% 60% at 65% 0%, rgba(45,90,142,0.25) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 0% 80%, rgba(184,92,56,0.15) 0%, transparent 55%),
-    linear-gradient(160deg,#1C1410 0%,#0F0C09 100%);
+  background:linear-gradient(135deg,#0A0806 0%,#100E09 40%,#0D0B08 100%);
 }
-.hero-grid{
-  position:absolute;inset:0;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(247,244,239,0.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(247,244,239,0.03) 1px,transparent 1px);
-  background-size:72px 72px;
-  mask-image:radial-gradient(ellipse 70% 70% at 60% 20%,black,transparent 80%);
+/* Diagonal gold slash */
+.hero-slash{
+  position:absolute;top:-10%;right:0;
+  width:52%;height:130%;
+  background:linear-gradient(150deg,rgba(200,155,40,0.06) 0%,rgba(200,155,40,0.02) 60%,transparent 100%);
+  border-left:1px solid rgba(200,155,40,0.12);
+  pointer-events:none;
+}
+.hero-slash::before{
+  content:'';position:absolute;top:0;left:-1px;
+  width:100%;height:100%;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(200,155,40,0.015) 40px,
+      rgba(200,155,40,0.015) 41px
+    );
+}
+/* Noise grain */
+.hero-grain{
+  position:absolute;inset:0;pointer-events:none;opacity:0.4;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
 }
 .hero>*{position:relative;z-index:1;}
-.hero-inner{
+
+/* TOP NAV */
+.hero-nav{
+  max-width:1200px;width:100%;margin:0 auto;
+  padding:28px 64px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+@media(max-width:768px){.hero-nav{padding:24px 24px;}}
+.hero-brand{
+  font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.12em;
+  color:#fff;display:flex;align-items:center;gap:10px;
+}
+.hero-brand-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:linear-gradient(135deg,#D4A827,#F0C84A);
+}
+.hero-nav-badge{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 18px;border:1px solid rgba(212,168,39,0.3);border-radius:100px;
+  font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(212,168,39,0.8);
+}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:#D4A827;animation:blink 1.8s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
+
+/* MAIN CONTENT */
+.hero-main{
   flex:1;display:flex;align-items:center;
-  max-width:1100px;width:100%;margin:0 auto;
-  padding:120px 64px 60px;gap:72px;
+  max-width:1200px;width:100%;margin:0 auto;
+  padding:0 64px 20px;gap:0;
 }
-@media(max-width:840px){.hero-inner{flex-direction:column;gap:40px;padding:100px 28px 48px;align-items:flex-start;}}
+@media(max-width:900px){.hero-main{flex-direction:column;padding:20px 24px 20px;gap:32px;}}
 
-.hero-left{flex:1;}
-.h-sup{
-  display:inline-flex;align-items:center;gap:12px;margin-bottom:28px;
-  font-size:10px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;
-  color:rgba(111,163,212,0.7);
-}
-.h-sup::before{content:'';width:28px;height:1px;background:rgba(111,163,212,0.4);}
-.h-title{
-  font-family:'Cormorant',serif;font-weight:300;line-height:0.92;
-  font-size:clamp(4.2rem,8.5vw,9.5rem);
-  color:#F7F4EF;letter-spacing:-0.02em;margin-bottom:6px;
-}
-.h-title-2{
-  font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(2rem,4vw,4.8rem);
-  color:var(--accent3);line-height:1;letter-spacing:0.01em;margin-bottom:44px;
-}
-.h-desc{font-size:15px;font-weight:300;color:rgba(247,244,239,0.45);line-height:1.8;max-width:380px;}
-.h-desc strong{color:rgba(247,244,239,0.75);font-weight:500;}
+.hero-content{flex:1;padding-right:48px;}
+@media(max-width:900px){.hero-content{padding-right:0;}}
 
-.hero-right{
-  width:280px;flex-shrink:0;
-  display:flex;flex-direction:column;
+/* PRE-TITLE */
+.hero-pre{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:20px;
+  font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:0.35em;text-transform:uppercase;
+  color:rgba(212,168,39,0.7);
 }
-@media(max-width:840px){.hero-right{width:100%;}}
-.hinfo{padding:16px 0;border-bottom:1px solid rgba(247,244,239,0.07);}
-.hinfo:first-child{border-top:1px solid rgba(247,244,239,0.07);}
-.hinfo-lbl{font-size:9px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(111,163,212,0.55);margin-bottom:4px;}
-.hinfo-val{font-size:14px;font-weight:300;color:rgba(247,244,239,0.75);}
-.hinfo-val strong{font-weight:500;color:#F7F4EF;}
-.urgency{
-  margin-top:18px;display:flex;align-items:center;gap:10px;
-  padding:11px 16px;background:rgba(184,92,56,0.12);
-  border:1px solid rgba(184,92,56,0.28);border-radius:var(--r);
-  font-size:12px;font-weight:400;color:rgba(220,140,100,0.9);
-}
-.u-dot{width:6px;height:6px;border-radius:50%;background:#E09060;flex-shrink:0;animation:blink 1.8s infinite;}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero-pre::before{content:'';width:24px;height:1px;background:rgba(212,168,39,0.5);}
 
-.hero-foot{
-  max-width:1100px;width:100%;margin:0 auto;
-  padding:0 64px 52px;
+/* BIG TITLE */
+.hero-t1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.5rem,7vw,6.5rem);
+  line-height:0.95;letter-spacing:0.04em;
+  color:#F5EFE0;margin-bottom:0;
+}
+.hero-t2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.5rem,7vw,6.5rem);
+  line-height:0.95;letter-spacing:0.04em;
+  background:linear-gradient(135deg,#D4A827 0%,#F0C84A 50%,#D4A827 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:0;
+}
+.hero-t3{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.5rem,7vw,6.5rem);
+  line-height:0.95;letter-spacing:0.04em;
+  color:#F5EFE0;margin-bottom:8px;
+}
+.hero-t4{
+  font-family:'Outfit',sans-serif;font-style:italic;
+  font-size:clamp(1.8rem,3.5vw,3.2rem);
+  font-weight:700;letter-spacing:-0.01em;
+  background:linear-gradient(135deg,#C89820,#E8B832);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:28px;
+}
+
+.hero-sub{
+  font-size:14px;font-weight:300;line-height:1.75;
+  color:rgba(245,239,224,0.5);max-width:460px;margin-bottom:36px;
+}
+.hero-sub strong{color:rgba(245,239,224,0.85);font-weight:500;}
+
+/* STATS ROW */
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:40px;}
+.hstat{display:flex;flex-direction:column;gap:3px;padding-right:24px;border-right:1px solid rgba(245,239,224,0.08);}
+.hstat:last-child{border-right:none;}
+.hstat-n{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;letter-spacing:0.06em;line-height:1;background:linear-gradient(135deg,#D4A827,#F0C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hstat-l{font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,239,224,0.4);}
+
+/* CTA BUTTONS */
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-gold{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:16px 36px;
+  background:linear-gradient(135deg,#C89820 0%,#E8B832 50%,#C89820 100%);
+  background-size:200% 100%;background-position:100%;
+  color:#0A0806;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:0.18em;text-transform:uppercase;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:all .35s;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 100%,12px 100%);
+}
+.btn-gold:hover{background-position:0%;transform:translateY(-2px);box-shadow:0 12px 32px rgba(212,168,39,0.35);}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:15px 32px;background:transparent;
+  color:rgba(245,239,224,0.7);font-family:'Outfit',sans-serif;font-size:12px;font-weight:500;
+  letter-spacing:0.15em;text-transform:uppercase;
+  text-decoration:none;border:1px solid rgba(245,239,224,0.2);cursor:pointer;
+  transition:all .28s;
+}
+.btn-outline:hover{border-color:rgba(212,168,39,0.5);color:rgba(212,168,39,0.9);}
+
+/* RIGHT SIDE CARD */
+.hero-card{
+  width:340px;flex-shrink:0;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(212,168,39,0.15);
+  backdrop-filter:blur(10px);
+}
+@media(max-width:900px){.hero-card{width:100%;max-width:500px;}}
+
+.hcard-top{
+  background:linear-gradient(135deg,#C89820,#D4A827);
+  padding:18px 24px;display:flex;align-items:center;justify-content:space-between;
+}
+.hcard-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.18em;color:#0A0806;}
+.hcard-badge{
+  font-family:'Outfit',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  background:rgba(10,8,6,0.2);color:#0A0806;padding:4px 10px;border-radius:2px;
+}
+
+.hcard-body{padding:0;}
+.hinfo-row{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 22px;border-bottom:1px solid rgba(212,168,39,0.08);
+}
+.hinfo-row:last-child{border-bottom:none;}
+.hinfo-icon{font-size:1.1rem;flex-shrink:0;width:24px;text-align:center;}
+.hinfo-text{}
+.hinfo-lbl{font-size:9px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(212,168,39,0.5);margin-bottom:2px;}
+.hinfo-val{font-size:13px;font-weight:400;color:rgba(245,239,224,0.8);}
+.hinfo-val strong{font-weight:600;color:#F5EFE0;}
+
+.hcard-urgency{
+  display:flex;align-items:center;gap:10px;
+  padding:14px 22px;
+  background:rgba(184,60,40,0.12);border-top:1px solid rgba(184,60,40,0.2);
+  font-size:12px;font-weight:500;color:rgba(230,120,100,0.9);letter-spacing:0.03em;
+}
+.u-dot{width:6px;height:6px;border-radius:50%;background:#E07050;flex-shrink:0;animation:blink 1.8s infinite;}
+
+/* BOTTOM BAR */
+.hero-bar{
+  border-top:1px solid rgba(212,168,39,0.1);
+  background:rgba(0,0,0,0.2);
+}
+.hero-bar-inner{
+  max-width:1200px;width:100%;margin:0 auto;
+  padding:20px 64px;
   display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
 }
-@media(max-width:840px){.hero-foot{padding:0 28px 44px;}}
-.dates{display:flex;gap:10px;}
-.dcard{text-align:center;padding:12px 22px;border:1px solid rgba(45,90,142,0.3);border-radius:var(--r);background:rgba(45,90,142,0.08);}
-.dcard-n{font-family:'Cormorant',serif;font-size:2.8rem;font-weight:300;color:var(--accent3);line-height:1;}
-.dcard-l{font-size:9px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:rgba(247,244,239,0.3);margin-top:2px;}
-.cta{
-  display:inline-flex;align-items:center;gap:14px;
-  padding:15px 38px;background:var(--accent2);color:#F7F4EF;
-  font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;
+@media(max-width:768px){.hero-bar-inner{padding:20px 24px;}}
+
+.dates-row{display:flex;align-items:center;gap:10px;}
+.dates-sep{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:rgba(212,168,39,0.4);}
+.dcard{text-align:center;}
+.dcard-n{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:0.08em;background:linear-gradient(135deg,#D4A827,#F0C84A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
+.dcard-l{font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,239,224,0.3);}
+
+.bar-label{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.12em;color:rgba(245,239,224,0.15);display:none;}
+@media(min-width:600px){.bar-label{display:block;}}
+
+.btn-inscr{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:14px 36px;
+  background:linear-gradient(135deg,#C89820,#E8B832);
+  color:#0A0806;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;
   letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;
-  border-radius:var(--r);transition:all .28s;
+  transition:all .3s;
 }
-.cta:hover{background:#4A84C2;transform:translateY(-2px);box-shadow:0 12px 32px rgba(45,90,142,0.35);}
-.cta svg{transition:transform .28s;}
-.cta:hover svg{transform:translateX(4px);}
+.btn-inscr:hover{filter:brightness(1.1);transform:translateY(-1px);box-shadow:0 10px 28px rgba(212,168,39,0.3);}
+.btn-inscr svg{transition:transform .3s;}
+.btn-inscr:hover svg{transform:translateX(4px);}
 
 /* ═══════ FORM AREA ═══════ */
 .form-area{background:var(--bg);padding:80px 0 100px;}
@@ -296,29 +429,129 @@ footer span{color:var(--accent2);}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-texture"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="h-sup">Formation professionnelle · Montréal</div>
-      <h1 class="h-title">Lettrage &</h1>
-      <p class="h-title-2">Impression sur Vinyle</p>
-      <p class="h-desc">Formation intensive de <strong>2 jours — 6 heures</strong> pour maîtriser le design, la découpe et l'application de vinyle. Tous niveaux acceptés.</p>
+  <div class="hero-bg"></div>
+  <div class="hero-slash"></div>
+  <div class="hero-grain"></div>
+
+  <!-- NAV -->
+  <nav class="hero-nav">
+    <div class="hero-brand">
+      <div class="hero-brand-dot"></div>
+      Focus Design
     </div>
-    <div class="hero-right">
-      <div class="hinfo"><div class="hinfo-lbl">Durée</div><div class="hinfo-val"><strong>6 heures</strong> de pratique intensive</div></div>
-      <div class="hinfo"><div class="hinfo-lbl">Matériel</div><div class="hinfo-val">Fourni gratuitement sur place</div></div>
-      <div class="hinfo"><div class="hinfo-lbl">Certificat</div><div class="hinfo-val">De participation inclus</div></div>
-      <div class="hinfo"><div class="hinfo-lbl">Lieu</div><div class="hinfo-val">8552 Boul. Pie-IX, Montréal</div></div>
-      <div class="urgency"><div class="u-dot"></div>Inscriptions closes le <strong>&nbsp;05 juin 2026</strong></div>
+    <div class="hero-nav-badge">
+      <div class="nav-dot"></div>
+      Places limitées
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="hero-main">
+    <div class="hero-content">
+      <div class="hero-pre">Formation Professionnelle · Montréal</div>
+
+      <div class="hero-t1">EXPERTISE EN</div>
+      <div class="hero-t2">LETTRAGE,</div>
+      <div class="hero-t1">VINYLE &</div>
+      <div class="hero-t2">IMPRESSION</div>
+      <div class="hero-t4">sur Maillot</div>
+
+      <p class="hero-sub">
+        Maîtrisez le design, la découpe, l'application de vinyle et l'impression sur maillot en seulement <strong>2 jours intensifs</strong> — 6 heures de pratique guidée.
+      </p>
+
+      <div class="hero-stats">
+        <div class="hstat">
+          <span class="hstat-n">2</span>
+          <span class="hstat-l">Jours</span>
+        </div>
+        <div class="hstat">
+          <span class="hstat-n">6H</span>
+          <span class="hstat-l">Pratique</span>
+        </div>
+        <div class="hstat">
+          <span class="hstat-n">360$</span>
+          <span class="hstat-l">CAD</span>
+        </div>
+        <div class="hstat">
+          <span class="hstat-n">∞</span>
+          <span class="hstat-l">Niveaux</span>
+        </div>
+      </div>
+
+      <div class="hero-btns">
+        <a class="btn-gold" href="#form">
+          S'inscrire maintenant
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a class="btn-outline" href="#form">Voir les détails</a>
+      </div>
+    </div>
+
+    <!-- CARD -->
+    <div class="hero-card">
+      <div class="hcard-top">
+        <span class="hcard-title">Détails de la formation</span>
+        <span class="hcard-badge">2026</span>
+      </div>
+      <div class="hcard-body">
+        <div class="hinfo-row">
+          <div class="hinfo-icon">📅</div>
+          <div class="hinfo-text">
+            <div class="hinfo-lbl">Dates</div>
+            <div class="hinfo-val"><strong>19 & 20 Juin 2026</strong></div>
+          </div>
+        </div>
+        <div class="hinfo-row">
+          <div class="hinfo-icon">⏱</div>
+          <div class="hinfo-text">
+            <div class="hinfo-lbl">Durée</div>
+            <div class="hinfo-val"><strong>6 heures</strong> de pratique intensive</div>
+          </div>
+        </div>
+        <div class="hinfo-row">
+          <div class="hinfo-icon">🎁</div>
+          <div class="hinfo-text">
+            <div class="hinfo-lbl">Matériel</div>
+            <div class="hinfo-val">Fourni <strong>gratuitement</strong> sur place</div>
+          </div>
+        </div>
+        <div class="hinfo-row">
+          <div class="hinfo-icon">🏅</div>
+          <div class="hinfo-text">
+            <div class="hinfo-lbl">Certificat</div>
+            <div class="hinfo-val">De participation <strong>inclus</strong></div>
+          </div>
+        </div>
+        <div class="hinfo-row">
+          <div class="hinfo-icon">📍</div>
+          <div class="hinfo-text">
+            <div class="hinfo-lbl">Lieu</div>
+            <div class="hinfo-val">8552 Boul. Pie-IX, <strong>Montréal</strong></div>
+          </div>
+        </div>
+        <div class="hcard-urgency">
+          <div class="u-dot"></div>
+          Inscriptions closes le <strong>&nbsp;05 juin 2026</strong>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="hero-foot">
-    <div class="dates">
-      <div class="dcard"><div class="dcard-n">19</div><div class="dcard-l">Vendredi · Juin</div></div>
-      <div class="dcard"><div class="dcard-n">20</div><div class="dcard-l">Samedi · Juin</div></div>
+
+  <!-- BOTTOM BAR -->
+  <div class="hero-bar">
+    <div class="hero-bar-inner">
+      <div class="dates-row">
+        <div class="dcard"><div class="dcard-n">19</div><div class="dcard-l">Vendredi · Juin</div></div>
+        <div class="dates-sep">&</div>
+        <div class="dcard"><div class="dcard-n">20</div><div class="dcard-l">Samedi · Juin</div></div>
+      </div>
+      <div class="bar-label">JUIN 2026</div>
+      <a class="btn-inscr" href="#form">
+        Réserver ma place
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
-    <a class="cta" href="#form">S'inscrire maintenant <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
 </section>
 
